@@ -1,0 +1,10 @@
+FILENAME:c2_bezier.db
+DEGREE
+2
+COORD.C.P.(X,Y)
+1.0 0.0
+1.0 1.0
+0.0 1.0
+[A,B]
+0.0
+1.0
