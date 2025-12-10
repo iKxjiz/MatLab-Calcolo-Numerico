@@ -22,11 +22,13 @@ mp = 100;
 tol = 1.0e-6;
 param=0;
 
-t = chebyshev2(0, 2*pi, 20);
+t = chebyshev2(0, 2*pi, n+1);
 [x, y] = cp2_circle(t);
-ppP = curv2_bezier_interp([x', y'], 0, 2*pi, param);
+ppP = curv2_ppbezierCC1_interp([x', y'], 0, 2*pi, param);
 
-S = get_mat_scale([0.92, 0.92]); % scala per cerchio interno
+disp(ppP);
+
+S = get_mat_scale([0.97, 0.97]); % scala per cerchio interno
 R = get_mat2_rot(pi/2);
 % Effettuo una rotazione sul cerchio interno per fare in modo che il punto
 % iniziale della circonfereza (curva non chiusa), sia in alto.
@@ -55,11 +57,11 @@ IP1P2_r1 = IP1P2_r1';
 [IP1P2_r2, t1_r2, t2_r2] = curv2_intersect(ppr2, ppP_intern);
 IP1P2_r2 = IP1P2_r2'; %
 
-point_plot(IP1P2_r1(1,:), 'ko', 2, 'k', 'y', 8);
-point_plot(IP1P2_r1(2,:), 'ko', 2, 'k', 'r', 8);
+point_plot(IP1P2_r1(1,:), 'ko', 10, 'k', 'k', 4);
+point_plot(IP1P2_r1(2,:), 'ro', 10, 'r', 'r', 4);
 
-point_plot(IP1P2_r2(1,:), 'ko', 2, 'k', 'g', 8);
-point_plot(IP1P2_r2(2,:), 'ko', 2, 'k', 'b', 8);
+point_plot(IP1P2_r2(1,:), 'go', 10, 'g', 'g', 4);
+point_plot(IP1P2_r2(2,:), 'bo', 10, 'b', 'b', 4);
 
 % Informazioni :
 fprintf("- ppr1 t1_r1(1)(%f) = %f %f \n",t1_r1(1), decast_val(ppr1, t1_r1(1)));
@@ -79,17 +81,18 @@ axis equal;
 ppP_points = curv2_ppbezier_plot(ppP, -mp, 'b', 3);
 point_fill(ppP_points, 'r', 'b', 2);
 
-[sx_1, dx_1] = decast_subdiv(ppP_intern, t2_r1(1));
+[sx_1, dx_1] = ppbezier_subdiv(ppP_intern, t2_r1(1));
 %curv2_ppbezier_plot(sx_1, mp, 'r', 2);
 %curv2_ppbezier_plot(dx_1, mp, 'b', 2);
-[p1, dx_1_1] = decast_subdiv(dx_1, t2_r2(1));
+
+[p1, dx_1_1] = ppbezier_subdiv(dx_1, t2_r2(1));
 %curv2_ppbezier_plot(p1, mp, 'r', 2);
 %curv2_ppbezier_plot(dx_1_1, mp, 'b', 2);
 
-[sx_2, dx_2] = decast_subdiv(ppP_intern, t2_r2(2));
+[sx_2, dx_2] = ppbezier_subdiv(ppP_intern, t2_r2(2));
 %curv2_ppbezier_plot(sx_2, mp, 'r', 2);
 %curv2_ppbezier_plot(dx_2, mp, 'b', 2);
-[p2, dx_2_2] = decast_subdiv(dx_2, t2_r1(2));
+[p2, dx_2_2] = ppbezier_subdiv(dx_2, t2_r1(2));
 %curv2_ppbezier_plot(p2, mp, 'r', 2);
 %curv2_ppbezier_plot(dx_2_2, mp, 'b', 2);
 

@@ -25,7 +25,7 @@ param=0;
 %Determinare la circonferenza per interpolazione di Hermite con una curva
 %cubica a tratti ppP
 t = chebyshev2(0, 2*pi, n + 1);
-[x, y] = cp2_circle(t);
+[x, y, xp, yp] = cp2_circle(t);
 ppP = curv2_bezier_interp([x', y'], 0, 2*pi, 2);
 
 S = get_mat_scale([0.97, 0.97]);
@@ -76,9 +76,9 @@ end
 
 fprintf("\nINTERSEZIONE TRA : ppr1  -  ppP_intern\n");
 % Punto in basso a dx di intersezione (ppr1)
-fprintf("- ppr1 t1_r1(1)(%f) = %f %f \n",t1_r1(1), decast_val(ppr1, t1_r1(1)));
+fprintf("- ppr1 t1_r1(1)(%f) = %f %f \n",t1_r1(1), decast_val(ppr1, t1_r1(1))); % Questo mi interessa
 % Punto in alto a dx di intersezione (ppr1)
-fprintf("- ppr1 t1_r1(2)(%f) = %f %f \n",t1_r1(2), decast_val(ppr1, t1_r1(2)));
+fprintf("- ppr1 t1_r1(2)(%f) = %f %f \n",t1_r1(2), decast_val(ppr1, t1_r1(2))); % Questo mi interessa
 % Punto in basso a dx di intersezione (ppP_intern)
 fprintf("- ppP_intern t2_r1(1)(%f) = %f %f \n",t2_r1(1), decast_val(ppP_intern, t2_r1(1)));
 % Punto in alto a dx di intersezione (ppP_intern)
@@ -114,15 +114,10 @@ open_figure(2);
 hold on;
 
 curv2_ppbezier_plot(ppP, mp, 'k', 3);
-% Si ricorda che ppP (circonferenza) NON è una curva chiusa!
 
-%% Parte Destra
 [p1_sx, p1_dx] = decast_subdiv(ppP_intern, t2_r1(1));
 %curv2_ppbezier_plot(p1_dx, mp, 'r', 2);
-%curv2_ppbezier_plot(p1_sx, mp, 'b', 2);
-
 [p1_1_sx, p1_1_dx] = decast_subdiv(ppP_intern, t2_r1(2));
-%curv2_ppbezier_plot(p1_1_dx, mp, 'r', 2);
 %curv2_ppbezier_plot(p1_1_sx, mp, 'b', 2);
 
 union_dx = curv2_mdppbezier_join(p1_dx, p1_1_sx, tol);
@@ -131,21 +126,20 @@ union_dx = curv2_mdppbezier_close(union_dx);
 union_dx_points = curv2_mdppbezier_plot(union_dx, -mp, 'k', 3);
 point_fill(union_dx_points,[1, 0, 0]);
 
-%% Parte Sinistra
-[p2_sx, p2_dx] = decast_subdiv(ppP_intern, t2_r2(1));
+R = get_mat2_rot(pi);
+ppP_intern.cp = point_trans(ppP_intern.cp, R);
+
+[p2_sx, p2_dx] = decast_subdiv(ppP_intern, t2_r1(1));
 %curv2_ppbezier_plot(p2_dx, mp, 'r', 2);
-%curv2_ppbezier_plot(p2_sx, mp, 'b', 2);
+[p2_2_sx, p2_2_dx] = decast_subdiv(ppP_intern, t2_r1(2));
+%curv2_ppbezier_plot(p2_2_sx, mp, 'b', 2);
 
-[p2_1_sx, p2_1_dx] = decast_subdiv(p2_sx, t2_r2(2));
-%curv2_ppbezier_plot(p2_1_dx, mp, 'r', 2);
-%curv2_ppbezier_plot(p2_1_sx, mp, 'b', 2);
-
-union_sx = curv2_mdppbezier_close(p2_1_dx);
+union_sx = curv2_mdppbezier_join(p2_dx, p2_2_sx, tol);
+union_sx = curv2_mdppbezier_close(union_sx);
 
 union_sx_points = curv2_mdppbezier_plot(union_sx, -mp, 'k', 3);
 point_fill(union_sx_points,[0.2, 0.7, 0.2]);
 
-%% Funzioni Locali :
 function x=chebyshev2( a,b,n )
 %input:
 %  a,b --> estremi intervalo in cui mappare i punti
