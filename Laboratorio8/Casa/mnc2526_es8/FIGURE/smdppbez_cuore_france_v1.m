@@ -3,11 +3,10 @@ function main()
 close all
 clc
 open_figure(1);
-axis_plot(0.2, 0.02, 0.43);
-grid on;
 
-np = 200;
+np = 100;
 n = 6;
+tol = 1.0e-2;
 d = 0.009;
 param = 0;
 

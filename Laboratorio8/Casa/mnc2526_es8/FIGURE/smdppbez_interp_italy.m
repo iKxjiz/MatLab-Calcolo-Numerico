@@ -19,17 +19,23 @@ grid on;
 
 a = 0;
 b = 2*pi;
-n = 20;
-mp = 100;
+n = 8;
+np = 100;
 tol = 1.0e-2; % Tolleranza buona in molti casi
 param=0;
+t = linspace(a,b,n+1);
 
 %Determinare la circonferenza per interpolazione di Hermite con una curva
 %cubica a tratti ppP
-t = linspace(a, b, n);
-[x, y, x1, y1] = cp2_circle(t); % SEMBRA ESSERE IL MIGLIORE TRA TUTTI
-ppP = curv2_ppbezierCC1_interp_der([x', y'], [x1', y1'], t);
-curv2_ppbezier_plot(ppP, mp, 'b', 2);
+[xp, yp, xp1, yp1] = cp2_circle(t);
+%plot(xp, yp, 'ro');
+
+Q =[xp', yp'];
+Q1 = [xp1', yp1'];
+%plot(Q, Q1, 'ro');
+
+ppP = curv2_ppbezierCC1_interp_der(Q,Q1,t);
+curv2_ppbezier_plot(ppP, np, 'b', 2);
 
 % Stima dell'errore di interpolazione
 npt = 150;
@@ -48,8 +54,8 @@ ppP_intern = ppP;
 ppP_intern.cp = point_trans(ppP_intern.cp, S);
 %ppP_intern = curv2_bezier_reverse(ppP_intern);
 
-curv2_ppbezier_plot(ppP, mp, 'b', 2);
-curv2_ppbezier_plot(ppP_intern, mp, 'b', 2);
+curv2_ppbezier_plot(ppP, np, 'b', 2);
+curv2_ppbezier_plot(ppP_intern, np, 'b', 2);
 
 ppr1.cp = [-1 0.3; 1 0.3];
 ppr1.deg = 1;
@@ -75,8 +81,8 @@ M2 = T2r2*R*T1r2;
 ppr1.cp = point_trans(ppr1.cp, M1);
 ppr2.cp = point_trans(ppr2.cp, M2);
 
-curv2_ppbezier_plot(ppr1, mp, 'r', 2);
-curv2_ppbezier_plot(ppr2, mp, 'r', 2);
+curv2_ppbezier_plot(ppr1, np, 'r', 2);
+curv2_ppbezier_plot(ppr2, np, 'r', 2);
 
 point_plot(ppr1.cp(1,:), 'ko', 3);
 point_plot(ppr2.cp(1,:), 'ko', 3);
@@ -129,49 +135,39 @@ point_plot(IP1P2_r2(2,:), 'bo', 10, 'b', 'b', 8);
 open_figure(2);
 hold on;
 
-curv2_ppbezier_plot(ppP, mp, 'k', 3);
+curv2_ppbezier_plot(ppP, np, 'k', 3);
 % Si ricorda che ppP (circonferenza) NON è una curva chiusa!
 
 %% Parte Destra
 [p1_sx, p1_dx] = ppbezier_subdiv(ppP_intern, t2_r1(1));
-%curv2_ppbezier_plot(p1_dx, mp, 'r', 2);
-%curv2_ppbezier_plot(p1_sx, mp, 'b', 2);
+%curv2_ppbezier_plot(p1_dx, np, 'r', 2);
+%curv2_ppbezier_plot(p1_sx, np, 'b', 2);
 
 [p1_1_sx, p1_1_dx] = ppbezier_subdiv(ppP_intern, t2_r1(2));
-%curv2_ppbezier_plot(p1_1_dx, mp, 'r', 2);
-%curv2_ppbezier_plot(p1_1_sx, mp, 'b', 2);
+%curv2_ppbezier_plot(p1_1_dx, np, 'r', 2);
+%curv2_ppbezier_plot(p1_1_sx, np, 'b', 2);
 
 union_dx = curv2_mdppbezier_join(p1_dx, p1_1_sx, tol);
 union_dx = curv2_mdppbezier_close(union_dx);
 
-union_dx_points = curv2_mdppbezier_plot(union_dx, -mp, 'k', 3);
+union_dx_points = curv2_mdppbezier_plot(union_dx, -np, 'k', 3);
 point_fill(union_dx_points,[1, 0, 0]);
 
 %% Parte Sinistra
 [p2_sx, p2_dx] = ppbezier_subdiv(ppP_intern, t2_r2(1));
-%curv2_ppbezier_plot(p2_dx, mp, 'r', 2);
-%curv2_ppbezier_plot(p2_sx, mp, 'b', 2);
+%curv2_ppbezier_plot(p2_dx, np, 'r', 2);
+%curv2_ppbezier_plot(p2_sx, np, 'b', 2);
 
 [p2_1_sx, p2_1_dx] = ppbezier_subdiv(p2_sx, t2_r2(2));
-%curv2_ppbezier_plot(p2_1_dx, mp, 'r', 2);
-%curv2_ppbezier_plot(p2_1_sx, mp, 'b', 2);
+%curv2_ppbezier_plot(p2_1_dx, np, 'r', 2);
+%curv2_ppbezier_plot(p2_1_sx, np, 'b', 2);
 
 union_sx = curv2_mdppbezier_close(p2_1_dx);
 
-union_sx_points = curv2_mdppbezier_plot(union_sx, -mp, 'k', 3);
+union_sx_points = curv2_mdppbezier_plot(union_sx, -np, 'k', 3);
 point_fill(union_sx_points,[0.2, 0.7, 0.2]);
 
 %% Funzioni Locali :
-function x=chebyshev2( a,b,n )
-%input:
-%  a,b --> estremi intervalo in cui mappare i punti
-%  n+1 --> numero di zeri del polinomio di Chebyshev di grado n+1
-%punti di Chebishev seconda specie
-for i=0:n
-    x(i+1)=0.5.*(a+b)+0.5.*(a-b).*cos(i*pi/n);
-end
-end
-
 function [x,y,xp,yp]=cp2_circle(t)
 %espressione parametrica della curva circonferenza
 x = cos(t);
@@ -179,3 +175,13 @@ y = sin(t);
 xp = -sin(t);
 yp = cos(t);
 end
+
+% function x=chebyshev2( a,b,n )
+% %input:
+% %  a,b --> estremi intervalo in cui mappare i punti
+% %  n+1 --> numero di zeri del polinomio di Chebyshev di grado n+1
+% %punti di Chebishev seconda specie
+% for i=0:n
+%     x(i+1)=0.5.*(a+b)+0.5.*(a-b).*cos(i*pi/n);
+% end
+% end
