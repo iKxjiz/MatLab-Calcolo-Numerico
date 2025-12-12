@@ -2,7 +2,7 @@
 %Questo script risolveun sistema lineare in più modi
 
 %chiama una funzione che definisce una matrice test
-A=def_mat(14,5);
+A=def_mat(14,5); % vedi def_mat per compredere la struttura della funzione
 
 %sia n la sua dimensione
 [n,m]=size(A);
