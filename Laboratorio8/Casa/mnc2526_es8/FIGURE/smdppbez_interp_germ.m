@@ -99,15 +99,15 @@ point_fill(cent_points, 'r');
 
 %% Funzioni locali
 
-function x = chebyshev2(a, b, n)
-% Punti di Chebyshev di seconda specie
-% Input:
-%   a, b --> estremi intervallo in cui mappare i punti
-%   n+1  --> numero di zeri del polinomio di Chebyshev di grado n+1
-for i = 0:n
-    x(i+1) = 0.5.*(a+b) + 0.5.*(a-b).*cos(i*pi/n);
-end
-end
+% function x = chebyshev2(a, b, n)
+% % Punti di Chebyshev di seconda specie
+% % Input:
+% %   a, b --> estremi intervallo in cui mappare i punti
+% %   n+1  --> numero di zeri del polinomio di Chebyshev di grado n+1
+% for i = 0:n
+%     x(i+1) = 0.5.*(a+b) + 0.5.*(a-b).*cos(i*pi/n);
+% end
+% end
 
 function [x, y, xp, yp] = cp2_circle(t)
 % Espressione parametrica della circonferenza e sue derivate
