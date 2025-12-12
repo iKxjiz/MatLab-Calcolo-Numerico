@@ -49,7 +49,7 @@ curv2_ppbezier_plot(blu, 30, 'b', 1.5);
 [~, rossa] = ppbezier_subdiv(rossa, t1);
 [~, blu] = ppbezier_subdiv(blu, t2);
 
-braccio = curv2_ppbezier_join(rossa, blu, 1.0e-2);
+braccio = curv2_mdppbezier_join(rossa, blu, 1.0e-2);
 % curv2_ppbezier_plot(braccio, 30, 'g', 1.5);
 
 
@@ -63,7 +63,7 @@ finale = braccio;
 
 for i = 1:7
     braccio.cp = point_trans(braccio.cp, R);
-    finale = curv2_ppbezier_join(finale, braccio, 0.3);
+    finale = curv2_mdppbezier_join(finale, braccio, 0.3);
 
     % curv2_ppbezier_plot(finale, 30, 'g', 1.5);
 
@@ -87,10 +87,10 @@ ppC.cp = point_trans(ppC.cp, M);
 Px = curv2_ppbezier_plot(ppC, -30);
 point_fill(Px, 'r');
 
-end 
+end
 function [x, y, xd, yd] = cerchio(t)
-    x = cos(t);
-    y = sin(t);
-    xd = -sin(t);
-    yd = cos(t);
+x = cos(t);
+y = sin(t);
+xd = -sin(t);
+yd = cos(t);
 end

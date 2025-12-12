@@ -19,7 +19,7 @@ ppC.cp = [
     -0.3, 0.6;
     -0.3, 0.2;
     0.0, 0.0
-];
+    ];
 
 S = get_mat_scale([6, 6]);
 ppC.cp = point_trans(ppC.cp, S);
@@ -50,7 +50,7 @@ r1.cp = [
     -0.2, 1];
 
 curv2_ppbezier_plot(r1, 30, 'k');
-r1 = curv2_ppbezier_de(r1, 2);  
+r1 = curv2_ppbezier_de(r1, 2);
 
 %% rettangolo orizzontale
 r2.ab = [0, 1, 2, 3, 4];
@@ -62,7 +62,7 @@ r2.cp = [
     1, 0.25;
     -1, 0.25];
 curv2_ppbezier_plot(r2, 30, 'k');
-r2 = curv2_ppbezier_de(r2, 2); 
+r2 = curv2_ppbezier_de(r2, 2);
 
 
 %% Striscia verticale
@@ -120,8 +120,8 @@ orizzontale2.cp = point_trans(orizzontale2.cp, R);
 % %suddivisione curva destra
 % [~,c2]= ppbezier_subdiv(ppCS, t1(4));
 % [c2,~]= ppbezier_subdiv(c2, t1(3));
-% 
-% 
+%
+%
 % %suddivisione rettangolo destra
 % [~, r22] = ppbezier_subdiv(r2, t2(2));
 % [r22, ~] = ppbezier_subdiv(r22, t2(4));

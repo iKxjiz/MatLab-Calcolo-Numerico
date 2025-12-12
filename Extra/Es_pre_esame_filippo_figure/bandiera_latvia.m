@@ -4,10 +4,10 @@ clear all;
 open_figure(1);
 
 function [x,y,xder,yder]=cerchio(t)
-    x = cos(t);
-    y = sin(t);
-    xder = -sin(t);
-    yder = cos(t);
+x = cos(t);
+y = sin(t);
+xder = -sin(t);
+yder = cos(t);
 end
 
 %% Cerchio esterno
@@ -35,7 +35,7 @@ c2.cp=point_trans(c2.cp,S);
 ppB.deg=1;
 ppB.ab=[0,1];
 ppB.cp=[-1.1,-0.2;
-        1.2,-0.2;]
+    1.2,-0.2;]
 % curv2_ppbezier_plot(ppB,np,'k');
 ppB = curv2_ppbezier_de(ppB, 2);
 
@@ -45,7 +45,7 @@ disp(c');
 
 %% fascia inferiore
 
-%spezzata 
+%spezzata
 [~,s]=ppbezier_subdiv(ppB,t2(1));
 [t,~]=ppbezier_subdiv(s,t2(2));
 % curv2_bezier_plot(t,np,'r',2,'r');
@@ -55,7 +55,7 @@ disp(c');
 [tt,~]=ppbezier_subdiv(ss,t1(2));
 % curv2_bezier_plot(tt,np,'r',2,'r');
 
-sotto = curv2_ppbezier_join(t,tt, 1.0e-2);
+sotto = curv2_mdppbezier_join(t,tt, 1.0e-2);
 Px = curv2_ppbezier_plot(sotto, -20, 'r');
 point_fill(Px, 'r');
 
