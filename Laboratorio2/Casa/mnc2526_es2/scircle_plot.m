@@ -16,7 +16,7 @@ n = 100;
 
 figure(1);
 title("Circonferenza");
-plot(x, y, 'r-', 'LineWidth', 6);
+plot(x, y, 'r-', 'LineWidth', 3);
 hold on
 axis equal
 grid on

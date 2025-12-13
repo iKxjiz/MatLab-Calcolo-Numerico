@@ -20,13 +20,13 @@ hold on
 point_fill([x, y], 'cyan');
 
 %determina il bounding-box e lo disegna
-[max_x, max_y, min_x, min_y] = quad(x, y);
+[max_x, max_y, min_x, min_y] = bbox(x, y);
 
 %disegna la poligonale di vertici i punti
 rectangle_plot(min_x, max_x, min_y, max_y, 'r-', 4);
 
 %funzione per determinare i massimi e i minimi :
-function [max_x, max_y, min_x, min_y] = quad(x, y)
+function [max_x, max_y, min_x, min_y] = bbox(x, y)
 max_x = max(x);
 max_y = max(y);
 min_x = min(x);
