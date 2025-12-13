@@ -2,13 +2,12 @@
 clear all
 clc
 
-%TO DO as HomeWork
 % Dati :
 a = 0:0.05:(pi/2); % Angoli tabulati da 0 a pi/2 con incremento di 0.05
 v = 100; % Velocità
 g = 9.81; % Gravità
 
-% Calcolo della gittata R
+% Calcolo della gittata R := (v^2 / g)*sin(2*θ)
 r = ((v.^2)./g).*sin(2.*a);
 % Quando si lavora con vettori e vuoi applicare operazioni a ogni
 % elemento, si usano SEMPRE gli operatori con il punto (.^, ./, .*)
@@ -30,16 +29,3 @@ fprintf('Gittata massima: %.2f m\n', valore);
 fprintf('Angolo per gittata massima: %.4f radianti\n', angolo_max);
 fprintf('π/4 = %.4f radianti\n', pi/4);
 fprintf('Differenza: %.6f radianti\n', abs(angolo_max - pi/4));
-
-
-%% Mio :
-% Prendi in un input il valore di θ (angolo) e la velocità v
-a = 0:0.05:(pi/2);
-v = 100;
-g = 9.81;
-% Indico con la gittata con la lettera : R
-r = ((v.^2)./g).*sin(2.*a);
-fprintf('yimin, ymin : %f %f \n', a, r);
-[valore, indice] = max(r)
-a(indice)
-pi/4
