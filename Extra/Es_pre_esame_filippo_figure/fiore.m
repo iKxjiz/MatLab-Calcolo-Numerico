@@ -4,10 +4,10 @@ clear all
 open_figure(1);
 
 function [x, y, xd, yd] = cerchio(t)
-    x = cos(t);
-    y = sin(t);
-    xd = -sin(t);
-    yd = cos(t);
+x = cos(t);
+y = sin(t);
+xd = -sin(t);
+yd = cos(t);
 end
 
 %% Cerchio base
@@ -20,7 +20,7 @@ ppC = curv2_ppbezierCC1_interp_der(Q1,[xd', yd'], t);
 %disegna cerchio
 % curv2_ppbezier_plot(ppC,40,'k-',2,'k');
 
-%% Spostamento cerchio 
+%% Spostamento cerchio
 T=get_mat_trasl([1.1, 1]);
 ppC.cp=point_trans(ppC.cp,T);
 % curv2_ppbezier_plot(ppC, 30, 'k-');
@@ -55,7 +55,7 @@ ppI.cp = point_trans(ppI.cp, RI);
 mangala = petalo;
 for i = 1: 4
     petalo.cp = point_trans(petalo.cp, RS);
-    mangala = curv2_ppbezier_join(mangala, petalo, 1.0e-2);
+    mangala = curv2_mdppbezier_join(mangala, petalo, 1.0e-2);
 end
 
 % curv2_ppbezier_plot(mangala, 30, 'k-');

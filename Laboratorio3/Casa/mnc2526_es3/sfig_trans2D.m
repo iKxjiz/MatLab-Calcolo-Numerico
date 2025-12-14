@@ -9,7 +9,16 @@ axis_plot(7);
 
 %definisce poligonale FRECCIA-SU e la disegna
 
-P = [3 3; 4 3; 4 1; 6 1; 6 3; 7 3; 5 4; 3 3];
+P = [
+    3 3;
+    4 3;
+    4 1;
+    6 1;
+    6 3;
+    7 3;
+    5 4;
+    3 3
+    ];
 
 %apre una figure e disegna gli assi
 open_figure(1);

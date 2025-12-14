@@ -43,16 +43,16 @@ ppC.cp = point_trans(ppC.cp, M);
 curv2_ppbezier_plot(ppC,np,'k');
 
 
-%% Scudo 
+%% Scudo
 
 % curva sinistra
 cs.deg=2;
 cs.ab=[0,1];
 cs.cp=[0.5, 0.1;
 
-        0.1,0.3;
+    0.1,0.3;
 
-        0.175,0.8];
+    0.175,0.8];
 
 % curv2_ppbezier_plot(cs,np,'g', 4);
 
@@ -60,12 +60,12 @@ cs.cp=[0.5, 0.1;
 ss.deg=1;
 ss.ab=[0,1];
 ss.cp=[0.175, 0.8;
-       0.5, 0.8];
+    0.5, 0.8];
 ss=curv2_ppbezier_de(ss,1);
 % curv2_ppbezier_plot(ss,np,'g', 4);
 
 %unione
-scudoSinistro = curv2_ppbezier_join(cs,ss,1.0e-2);
+scudoSinistro = curv2_mdppbezier_join(cs,ss,1.0e-2);
 
 %riflessione a destra
 [scudoRiflesso,T,R] = align_curve(scudoSinistro);
@@ -76,20 +76,20 @@ scudoDestro.cp = [x,-y]; %ribalto rispetto alla y dopo aver trasportato la figur
 M = inv(R*T); %trasformazione inversa
 
 %unione parte sinistra e destra
-ppScudo = curv2_ppbezier_join(scudoRiflesso,scudoDestro,1.0e-2);
+ppScudo = curv2_mdppbezier_join(scudoRiflesso,scudoDestro,1.0e-2);
 ppScudo.cp = point_trans(ppScudo.cp,M);
-curv2_ppbezier_plot(ppScudo,np,'k-');
+curv2_mdppbezier_plot(ppScudo,np,'k-');
 
 
 %% Colorazione
 open_figure(2);
 
 %scudo
-Px = curv2_ppbezier_plot(ppScudo, -np);
+Px = curv2_mdppbezier_plot(ppScudo, np, 'c', 3);
 point_fill(Px, 'c', 'b');
 
 %cerchio
-% Px = curv2_ppbezier_plot(ppC, -np);
+% Px = curv2_mdppbezier_plot(ppC, np, 'k', 3);
 % point_fill(Px, 'k', 'k', 2);
 
 %% Fascie gialle
@@ -98,7 +98,7 @@ np = 40;
 %prima fascia: sposto sinusoide
 T = get_mat_trasl([0, -0.16]);
 ppS.cp = point_trans(ppS.cp, T);
-[I, t1, t2] = curv2_intersect(ppC, ppS);
+[~, t1, t2] = curv2_intersect(ppC, ppS);
 % disp(I');
 
 %prima fascia: taglio sinusoide
@@ -110,12 +110,11 @@ ppS.cp = point_trans(ppS.cp, T);
 [cc, ~] = ppbezier_subdiv(cc, t1(2));
 
 %prima fascia: unione
-fascia = curv2_ppbezier_join(sf, cc, 1.0e-2);
+fascia = curv2_mdppbezier_join(sf, cc, 1.0e-2);
 
 %prima fascia: coloro
-Px = curv2_ppbezier_plot(fascia, -np);
+Px = curv2_mdppbezier_plot(fascia, np, 'c', 3);
 point_fill(Px, 'y', 'k');
-
 
 fasciaSuperiore = ppS;
 T = get_mat_trasl([0, 0.08]);
@@ -123,8 +122,8 @@ for i = 1:4
     fasciaInferiore = fasciaSuperiore;
     fasciaSuperiore.cp = point_trans(fasciaSuperiore.cp, T);
 
-    [I1, t1, t2] = curv2_intersect(fasciaInferiore, ppC);
-    [I2, t3, t4] = curv2_intersect(fasciaSuperiore, ppC);
+    [~, t1, t2] = curv2_intersect(fasciaInferiore, ppC);
+    [~, t3, t4] = curv2_intersect(fasciaSuperiore, ppC);
     % disp(I1');
     % disp(I2');
 
@@ -147,64 +146,64 @@ for i = 1:4
     [~, cc] = ppbezier_subdiv(ppC, t2(2));
     [ccd, ~] = ppbezier_subdiv(cc, t4(2));
     % curv2_ppbezier_plot(ccd,np, 'y', 1.5);
-    
+
     %unione
-    mezzaSinistra = curv2_ppbezier_join(sfi, ccs, 1.0e-2);
-    mezzaDestra = curv2_ppbezier_join(sfs, ccd, 1.0e-2);
-    fascia = curv2_ppbezier_join(mezzaSinistra, mezzaDestra, 1.0e-2);
+    mezzaSinistra = curv2_mdppbezier_join(sfi, ccs, 1.0e-2);
+    mezzaDestra = curv2_mdppbezier_join(sfs, ccd, 1.0e-2);
+    fascia = curv2_mdppbezier_join(mezzaSinistra, mezzaDestra, 1.0e-2);
 
     %coloro fascia
-    Px = curv2_ppbezier_plot(fascia, -np);
+    Px = curv2_mdppbezier_plot(fascia, np, 'c', 3);
     if (mod(i,2) == 0)
         point_fill(Px, 'y', 'k');
     else
         point_fill(Px, 'k', 'k');
     end
 
-%ultima fascia: utilizzo ultima fascia superiore già tagliata
+    %ultima fascia: utilizzo ultima fascia superiore già tagliata
 
-%ultima fascia: taglio circonferenza
-[ccs, ~] = ppbezier_subdiv(ppC, t4(1));
-[~, ccd] = ppbezier_subdiv(cc, t4(2));
+    %ultima fascia: taglio circonferenza
+    [ccs, ~] = ppbezier_subdiv(ppC, t4(1));
+    [~, ccd] = ppbezier_subdiv(cc, t4(2));
 
-%ultima fascia: unione circonferenze e unnione fascia
-fascia = curv2_ppbezier_join(ccs, ccd, 1.0e-2);
-fascia = curv2_ppbezier_join(fascia, sfs, 1.0e-2);
+    %ultima fascia: unione circonferenze e unnione fascia
+    fascia = curv2_mdppbezier_join(ccs, ccd, 1.0e-2);
+    fascia = curv2_mdppbezier_join(fascia, sfs, 1.0e-2);
 
-%ultima fascia: coloro
-Px = curv2_ppbezier_plot(fascia, -np);
-point_fill(Px, 'k', 'k');
+    %ultima fascia: coloro
+    Px = curv2_mdppbezier_plot(fascia, np, 'c', 3);
+    point_fill(Px, 'k', 'k');
 end
 end
 
 function [x, y] = sinusoide(t)
-    x = t;
-    y = sin(t);
+x = t;
+y = sin(t);
 end
 
 function [x, y, xd, yd] = cerchio(t)
-    x = cos(t);
-    y = sin(t);
-    xd = -sin(t);
-    yd = cos(t);
+x = cos(t);
+y = sin(t);
+xd = -sin(t);
+yd = cos(t);
 end
 
-function x=chebyshev2( a,b,n )
-%input:
-%  a,b --> estremi intervalo in cui mappare i punti
-%  n+1 --> numero di zeri del polinomio di Chebyshev di grado n+1 
-%punti di Chebishev seconda specie
-    for i=0:n
-      x(i+1)=0.5.*(a+b)+0.5.*(a-b).*cos(i*pi/n);
-    end
-end
+% function x=chebyshev2( a,b,n )
+% %input:
+% %  a,b --> estremi intervalo in cui mappare i punti
+% %  n+1 --> numero di zeri del polinomio di Chebyshev di grado n+1
+% %punti di Chebishev seconda specie
+% for i=0:n
+%     x(i+1)=0.5.*(a+b)+0.5.*(a-b).*cos(i*pi/n);
+% end
+% end
 
 function [ppbezQ, T, R] = align_curve(ppbezP)
-    ncp = length(ppbezP.cp(:, 1)); %numero di punti di controllo
-    ppbezQ = ppbezP;
-    T = get_mat_trasl(-ppbezP.cp(1, :));
-    alfa = -atan2(ppbezP.cp(ncp, 2) - ppbezP.cp(1, 2), ppbezP.cp(ncp, 1) - ppbezP.cp(1, 1));
-    R = get_mat2_rot(alfa);
-    M = R*T;
-    ppbezQ.cp = point_trans(ppbezQ.cp, M);
+ncp = length(ppbezP.cp(:, 1)); %numero di punti di controllo
+ppbezQ = ppbezP;
+T = get_mat_trasl(-ppbezP.cp(1, :));
+alfa = -atan2(ppbezP.cp(ncp, 2) - ppbezP.cp(1, 2), ppbezP.cp(ncp, 1) - ppbezP.cp(1, 1));
+R = get_mat2_rot(alfa);
+M = R*T;
+ppbezQ.cp = point_trans(ppbezQ.cp, M);
 end
