@@ -1,6 +1,6 @@
 function [g,a,b,cP,cB]=def_pol(ip)
 %*******************************************************
-%function che definisce polinomi in [0,1] sia 
+%function che definisce polinomi in [0,1] sia
 %nella base canonica che nella base di Bernstein
 % ip  --> indice del polinomio test
 % g   <-- grado del polinomio test
@@ -16,8 +16,10 @@ switch ip
         b = 1;
         cP = [5/324, -49/216, 203/162, -245/72, 175/36, -7/2, 1];
         cB = [5/324, -29/1296, 227/9720, -227/12960, 29/3240, -5/1944, 0];
+        % Questo polinomio ha radici molto vicine tra loro in [0,1], quindi
+        % è un buon test per valutare la stabilità numerica degli algoritmi.
     case 2
-        % polinomio di grado 10 con coefficienti di segno alterno nella 
+        % polinomio di grado 10 con coefficienti di segno alterno nella
         % base canonica: +1 -1 +1 -1 +1 -1 +1 -1 +1 -1 +1
         g = 10;
         a = 0;

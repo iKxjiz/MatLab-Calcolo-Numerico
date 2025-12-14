@@ -1,6 +1,6 @@
 %script spoly_eval_linear.m
 % Errore inerente nella valutazione polinomiale
-% viene prodotto il grafico della funzione polinomiale 
+% viene prodotto il grafico della funzione polinomiale
 % nell'intervallo di definizione
 clc
 clear
@@ -9,41 +9,41 @@ close all
 %settare gc per selezionare i diversi casi
 gc=1;
 switch gc
-    case 1 % coefficienti numeri finiti, la discretizzazione no
-       c=[100,-1];
-       c=fliplr(c);  a=100;  b=101;
-       %punti equispaziati
-       m=51;
-       x=linspace(a,b,m);
-    case 2 % a_0 non finito, a_1 e discretizzazione si
-       c=[99.9,-1];
-       c=fliplr(c);  a=100;  b=101;
-       h=2^-7;
-       x=a:h:b;
-       m=length(x);
-    case 3 % a_1 non finito, a_0 e discretizzazione si 
-       c=[100,-1.001];
-       c=fliplr(c);  a=100;  b=101;
-       h=2^-7;
-       x=a:h:b;
-       m=length(x);
-    case 4 % a_0, a_1 e discretizzazione sono numeri finiti
-       c=[100,-1];
-       c=fliplr(c);  a=100;  b=101;
-       h=2^-7;
-       x=a:h:b;
-       m=length(x);
+   case 1 % coefficienti numeri finiti, la discretizzazione no
+      c=[100,-1];
+      c=fliplr(c);  a=100;  b=101;
+      %punti equispaziati
+      m=51;
+      x=linspace(a,b,m);
+   case 2 % a_0 non finito, a_1 e discretizzazione si
+      c=[99.9,-1];
+      c=fliplr(c);  a=100;  b=101;
+      h=2^-7;
+      x=a:h:b;
+      m=length(x);
+   case 3 % a_1 non finito, a_0 e discretizzazione si
+      c=[100,-1.001];
+      c=fliplr(c);  a=100;  b=101;
+      h=2^-7;
+      x=a:h:b;
+      m=length(x);
+   case 4 % a_0, a_1 e discretizzazione sono numeri finiti
+      c=[100,-1];
+      c=fliplr(c);  a=100;  b=101;
+      h=2^-7;
+      x=a:h:b;
+      m=length(x);
 end
 
 %altri set di punti di valutazione
-    % h=0.000244140625;
-    % x=a:h:b;
+% h=0.000244140625;
+% x=a:h:b;
 
-    % h=2^-4;
-    % x=a:h:b;
+% h=2^-4;
+% x=a:h:b;
 
-    % h=2^-5;
-    % x=a:h:b;
+% h=2^-5;
+% x=a:h:b;
 
 sc=single(c);
 sx=single(x);
