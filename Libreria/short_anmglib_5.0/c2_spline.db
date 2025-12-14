@@ -1,0 +1,22 @@
+FILENAME:c2_spline.db
+DEGREE
+2
+N.C.P.
+5
+N.KNOTS
+8
+COORD.C.P.(X,Y)
+1.0 0.0
+1.0 1.0
+1.5 2.0
+2.0 2.0
+2.0 0.0
+KNOTS
+0.0
+0.0
+0.0
+0.3
+0.6
+1.0
+1.0
+1.0

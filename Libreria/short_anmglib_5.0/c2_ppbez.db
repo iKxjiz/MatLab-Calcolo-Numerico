@@ -1,0 +1,15 @@
+FILENAME:c2_ppbez.db
+NC
+2
+DEGREE
+2
+COORD.C.P.(X,Y)
+1.0 0.0
+1.0 1.0
+0.0 1.0
+-1.0 1.0
+-1.0 0.0
+KNOTS
+0.0
+1.0
+2.0

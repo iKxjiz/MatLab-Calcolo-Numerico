@@ -1,13 +1,18 @@
 % script spolint_lagr_dati.m
 % Interpolazione polinomiale di un set di dati nella forma di Lagrange;
 % viene prodotto il grafico del data set e del polinomio interpolante
-clear
-close all
 
+close all;
+clear
+clc
+
+%caricamento del data set
 A=load('dataset1.dat');
-[n m]=size(A);
-x=A(1:n,1)';
-y=A(1:n,2)';
+
+%estrazione dei dati x e y
+n=size(A,1); % numero di dati (punti sul piano)
+x=A(1:n,1)'; % vettore riga delle ascisse trasposto
+y=A(1:n,2)'; % vettore riga delle ordinate trasposto
 
 %definire il grado del polinomio interpolante
 g=n-1;

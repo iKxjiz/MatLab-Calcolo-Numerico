@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/tmp/cleanup_script.sh:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
