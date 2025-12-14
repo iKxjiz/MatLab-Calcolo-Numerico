@@ -22,11 +22,18 @@ curv2_ppbezier_plot(c1s,np,'k');
 
 [picc,t1,t2]=curv2_intersect(c1,c1s);
 disp(picc');
-% 
+%
 % [~,p]= ppbezier_subdiv(c1,t1(2));
 % [~,s]=ppbezier_subdiv(p,t1(1));
 
 [p,~]= ppbezier_subdiv(c1s,t2(2));
 [~,s]=ppbezier_subdiv(c1s,t2(1));
 curv2_ppbezier_plot(s,np,'r');
+end
+
+function [x, y, xd, yd] = cerchio(t)
+x = cos(t);
+y = sin(t);
+xd = -sin(t);
+yd = cos(t);
 end

@@ -70,7 +70,7 @@ r2 = curv2_ppbezier_de(r2, 2);
 %intersezione
 [I, t1, t2] = curv2_intersect(ppCS, r1);
 disp(I');
-
+t1
 %suddivisione curva sopra
 [~,c1]= ppbezier_subdiv(ppCS, t1(3));
 [c1,~]= ppbezier_subdiv(c1, t1(2));
@@ -79,7 +79,7 @@ disp(I');
 [~, r11] = ppbezier_subdiv(r1, t2(2));
 [r11, ~] = ppbezier_subdiv(r11, t2(1));
 
-verticale1 = curv2_ppbezier_join(c1, r11, 1.0e-2);
+verticale1 = curv2_mdppbezier_join(c1, r11, 1.0e-2);
 curv2_ppbezier_plot(verticale1, 30, 'b');
 
 
@@ -93,9 +93,9 @@ curv2_ppbezier_plot(verticale1, 30, 'b');
 [r12, ~] = ppbezier_subdiv(r12, t2(3));
 
 
-verticale2 = curv2_ppbezier_join(c2, r12, 1.0e-1);
+verticale2 = curv2_mdppbezier_join(c2, r12, 1.0e-1);
 
-verticale = curv2_ppbezier_join(verticale1, verticale2, 1.0e-1);
+verticale = curv2_mdppbezier_join(verticale1, verticale2, 1.0e-1);
 curv2_ppbezier_plot(verticale, 30, 'b');
 
 %% Striscia orizzontale
@@ -111,7 +111,7 @@ disp(I');
 [~, r21] = ppbezier_subdiv(r2, t2(3));
 [r21, ~] = ppbezier_subdiv(r21, t2(1));
 
-orizzontale1 = curv2_ppbezier_join(c2, r21, 1.0e-2);
+orizzontale1 = curv2_mdppbezier_join(c2, r21, 1.0e-2);
 
 orizzontale2 = orizzontale1;
 R = get_mat2_rot(pi);
@@ -127,23 +127,23 @@ orizzontale2.cp = point_trans(orizzontale2.cp, R);
 % [r22, ~] = ppbezier_subdiv(r22, t2(4));
 
 
-% orizzontale2 = curv2_ppbezier_join(c2, r22, 1.0e-1);
-curv2_ppbezier_plot(orizzontale2, 30, 'b');
+% orizzontale2 = curv2_mdppbezier_join(c2, r22, 1.0e-1);
+curv2_mdppbezier_plot(orizzontale2, 30, 'b');
 
-orizzontale = curv2_ppbezier_join(orizzontale1, orizzontale2, 1.0e-1);
-% curv2_ppbezier_plot(orizzontale, 30, 'b');
+orizzontale = curv2_mdppbezier_join(orizzontale1, orizzontale2, 1.0e-1);
+% curv2_mdppbezier_plot(orizzontale, 30, 'b');
 
 %% Colore
 open_figure(2);
 np = 30;
 
 %disegno cerchio
-curv2_ppbezier_plot(ppC,30,'k-',2,'k');
+curv2_mdppbezier_plot(ppC,30,'k-',2,'k');
 
 %coloro striscia verticale
-Px = curv2_ppbezier_plot(verticale, -30);
+Px = curv2_mdppbezier_plot(verticale, -30);
 point_fill(Px,'b');
 
 %coloro striscia orizzontale
-Px = curv2_ppbezier_plot(orizzontale, -30);
+Px = curv2_mdppbezier_plot(orizzontale, -30);
 point_fill(Px,'b');

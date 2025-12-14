@@ -1,13 +1,13 @@
 close all;
 clear all;
 function [ppbezQ, T, R] = align_curve(ppbezP)
-    ncp = length(ppbezP.cp(:, 1)); %numero di punti di controllo
-    ppbezQ = ppbezP;
-    T = get_mat_trasl(-ppbezP.cp(1, :));
-    alfa = -atan2(ppbezP.cp(ncp, 2) - ppbezP.cp(1, 2), ppbezP.cp(ncp, 1) - ppbezP.cp(1, 1));
-    R = get_mat2_rot(alfa);
-    M = R*T;
-    ppbezQ.cp = point_trans(ppbezQ.cp, M);
+ncp = length(ppbezP.cp(:, 1)); %numero di punti di controllo
+ppbezQ = ppbezP;
+T = get_mat_trasl(-ppbezP.cp(1, :));
+alfa = -atan2(ppbezP.cp(ncp, 2) - ppbezP.cp(1, 2), ppbezP.cp(ncp, 1) - ppbezP.cp(1, 1));
+R = get_mat2_rot(alfa);
+M = R*T;
+ppbezQ.cp = point_trans(ppbezQ.cp, M);
 end
 
 
@@ -40,20 +40,20 @@ open_figure(1);
 pp.deg=2;
 pp.ab=[0,1];
 pp.cp=[0,0;
-        -0.06,0.2;
-        -0.2,0.2];
+    -0.06,0.2;
+    -0.2,0.2];
 
 % parte sinistra alta
 pc.deg=2;
 pc.ab=[0,1];
 pc.cp=[-0.2,0.2;
-        -0.06,0.2;
-        0,0.4];
+    -0.06,0.2;
+    0,0.4];
 
 
 
 %unione
-sinistra=curv2_ppbezier_join(pp,pc,1.0e-2);
+sinistra=curv2_mdppbezier_join(pp,pc,1.0e-2);
 % curv2_ppbezier_plot(sinistra,150,'b');
 
 %riflessione e unione con parte destra
@@ -62,10 +62,10 @@ T2=ppAligned;
 x=ppAligned.cp(:,1);
 y=ppAligned.cp(:,2);
 ppAligned.cp=[x,-y];
-quadro=curv2_ppbezier_join(T2,ppAligned,1.0e-2);
+quadro=curv2_mdppbezier_join(T2,ppAligned,1.0e-2);
 M=inv(R*T);
 quadro.cp=point_trans(quadro.cp,M);
-Px=curv2_ppbezier_plot(quadro,50,'k');
+Px=curv2_mdppbezier_plot(quadro,50,'k');
 
 %% circolo esterno
 
@@ -80,7 +80,7 @@ c2.cp = point_trans(c2.cp, S);
 c2.cp = point_trans(c2.cp, T2);
 % curv2_ppbezier_plot(c2, 30, 'k');
 
-R = get_mat2_rot(2 * pi / 12); 
+R = get_mat2_rot(2 * pi / 12);
 for i=1:12
     Px = curv2_ppbezier_plot(c2, -30);
     point_fill(Px, 'r', 'b', 2);

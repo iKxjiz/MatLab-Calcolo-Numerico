@@ -3,19 +3,19 @@ clear all;
 
 open_figure(1);
 function [x,y,xder,yder]=cerchio(t)
-    x = cos(t);
-    y = sin(t);
-    xder = -sin(t);
-    yder = cos(t);
+x = cos(t);
+y = sin(t);
+xder = -sin(t);
+yder = cos(t);
 end
 function x=chebyshev2( a,b,n )
 %input:
 %  a,b --> estremi intervalo in cui mappare i punti
-%  n+1 --> numero di zeri del polinomio di Chebyshev di grado n+1 
+%  n+1 --> numero di zeri del polinomio di Chebyshev di grado n+1
 %punti di Chebishev seconda specie
-    for i=0:n
-      x(i+1)=0.5.*(a+b)+0.5.*(a-b).*cos(i*pi/n);
-    end
+for i=0:n
+    x(i+1)=0.5.*(a+b)+0.5.*(a-b).*cos(i*pi/n);
+end
 end
 
 
@@ -67,15 +67,15 @@ disp(pip');
 [h,~]=ppbezier_subdiv(g,t2(2));
 % curv2_ppbezier_plot(h,np,'r');
 
-Petalo= curv2_ppbezier_join(s,h,1.0e-2);
-Px=curv2_ppbezier_plot(Petalo,np,'r');
+Petalo= curv2_mdppbezier_join(s,h,1.0e-2);
+Px=curv2_mdppbezier_plot(Petalo,np,'r');
 point_fill(Px,'r','k');
 
 %% rotazione
 pet=Petalo;
 for i=1:6
     pet.cp=point_trans(pet.cp,M);
-    Px2=curv2_ppbezier_plot(pet,np,'k');
+    Px2=curv2_mdppbezier_plot(pet,np,'k');
     point_fill(Px2,'r');
 end
 
@@ -91,7 +91,7 @@ pet2.cp=point_trans(pet2.cp,M);
 R=get_mat2_rot(2*pi/7);
 for i=0:7
     pet2.cp=point_trans(pet2.cp,R);
-    Px=curv2_ppbezier_plot(pet2,np,'k');
+    Px=curv2_mdppbezier_plot(pet2,np,'k');
     point_fill(Px,'g');
 end
 %% cerchio
