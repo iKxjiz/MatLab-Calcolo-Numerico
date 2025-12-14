@@ -18,12 +18,10 @@ b2 = 16; % Nota cosa succede se metti b2 = 8 oppure lo aumenti tipo a b2 = 32
 
 np = 200; % numero di punti di valutazione della curva
 
-open_figure(1);
-axis_plot(2, 0.5); % Impostazione degli assi
-
 % Function curva_piana_1 per la prima curva (cuspide NON regolare)
-curv2_plot('curva_piana_1',a1, b1, np, 'r-', 4); % Disegno della prima curva
+curv2_plot('curva_piana_1',a1, b1, np, 'r-', 2); % Disegno della prima curva
+
 % Function curva_piana_2 per la seconda curva
-curv2_plot('curva_piana_2',a2, b2, np, 'b-', 4); % Disegno della seconda curva
+curv2_plot('curva_piana_2',a2, b2, np, 'b-', 2); % Disegno della seconda curva
 
 

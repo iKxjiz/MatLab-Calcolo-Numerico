@@ -7,9 +7,10 @@ open_figure(1);
 axis_plot(12,1.0);
 
 %carica file .db con definizione curva di Bezier
-cbez = curv2_bezier_load('curve.db');
+cbez = curv2_bezier_load('c2_bezier.db');
 % NOTA : cbez è la "structure" di una curva 2D di Bèzier
-cbez %visualizza struttura dati della curva
+disp(cbez);
+%visualizza struttura dati della curva
 % cbez.deg : campo scalare per il grado
 % cbez.cp : campo array per i punti di controllo (array (n+1)x2)
 % cbez.ab : campo array per intervallo di definizione (array di 2)
