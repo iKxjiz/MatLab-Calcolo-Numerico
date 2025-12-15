@@ -16,11 +16,12 @@ if (val < 0)
     mdppP=curv2_mdppbezier_reverse(mdppP);
     val=-val;
 end
-fprintf('area della curva: %e\n',val); 
+fprintf('area della curva: %e\n',val);
 
 %scaliamo ora la curva affinché abbia area unitaria
 s=sqrt(1/val);
-%TO DO
+S = get_mat_scale([s,s]);
+mdppP.cp = point_trans(mdppP.cp, S);
 
 %disegniamo curva scalata
 curv2_mdppbezier_plot(mdppP,20,'r-',2);

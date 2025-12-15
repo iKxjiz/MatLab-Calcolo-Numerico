@@ -18,9 +18,9 @@ for i=1:m
   IA=trapezi_comp(fun,a,b,n,0);
   AbsErr(i)=abs(IA-I);
   if(i>1)
-      fprintf('%9.3e %22.15e %9.3e %9.3e\n',h,IA,AbsErr(i),AbsErr(i-1)/AbsErr(i));
+    fprintf('%9.3e %22.15e %9.3e %9.3e\n',h,IA,AbsErr(i),AbsErr(i-1)/AbsErr(i));
   else
-      fprintf('%9.3e %22.15e %9.3e\n',h,IA,AbsErr(i));
+    fprintf('%9.3e %22.15e %9.3e\n',h,IA,AbsErr(i));
   end
 end
 
@@ -28,7 +28,7 @@ fp=1;
 dfun=str2func(['d','2','_',funz]);
 %visualizzazione grafica
 if (fp>0)
- close all
- figure(1)
- fplot(dfun,[a b],100,'LineWidth',1.5);
+  close all
+  figure(1)
+  fplot(dfun,[a b],100,'LineWidth',1.5);
 end

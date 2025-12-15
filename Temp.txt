@@ -20,6 +20,8 @@ Finire la parte della fattorizzazione (e caricare gli appunti della fattorizzazi
 
 Dai un'occhiata a tutti gli appunti, anche veloce
 
+Aggiornare il README.md della repo
+
 FINE.
 
 
