@@ -24,9 +24,8 @@ b = 8;
 %valutazione e disegno della curva analitica
 
 % numero di punti di valutazione
-np=100;
-
-[x,y]=curv2_plot('c2_curv3_pol',a,b,np,'b',1.5);
+np=150;
+[x,y]=curv2_plot('c2_curv3_pol',a,b,np,'b',2);
 % %in alternativa
 % t=linspace(a,b,np);
 % [x,y]=c2_curv3_pol(t);
@@ -50,10 +49,11 @@ end
 % alla distribuzione di Chebyshev.
 
 %n+1 punti campionati dalla curva c2_curv3_pol test
-[x, y] = c2_curv3_pol(t);
-x = x'; % x = alla sua trasposta perchè i sistemi lineari vanno risolti con vettori colonna
-y = y'; % y = alla sua trasposta perchè i sistemi lineari vanno risolti con vettori colonna
-Q = [x,y];
+[xp, yp] = c2_curv3_pol(t);
+Q = [xp',yp']; % matrice dei punti di interpolazione
+% xp = alla sua trasposta perchè i sistemi lineari vanno risolti con vettori colonna
+% yp = alla sua trasposta perchè i sistemi lineari vanno risolti con vettori colonna
+
 
 %disegno punti di interpolazione
 point_plot(Q,'ko',1,'k');
@@ -67,13 +67,17 @@ B=bernst_val(n,tt);
 %calcolo matrice del sistema lineare è già calcolata con i polinomi di Bernstein B
 
 %soluzione dei due sistemi lineari
-cx=B\x;
-cy=B\y;
+% Forma compatta :
+Pbez.cp=B\Q;
+
+% Forma estesa :
+%cx=B\xp';
+%cy=B\yp';
 
 %definizione curva di Bézier di interpolazione
 Pbez.deg=n;
 Pbez.ab=[a,b];
-Pbez.cp=[cx,cy];
+%Pbez.cp=[cx,cy];
 
 %valutazione e disegno curva di Bézier interpolante
 xy=curv2_bezier_plot(Pbez,np,'r--',1.5');

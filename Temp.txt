@@ -6,5 +6,20 @@ Da fare :
 
 Programma Settimanale :
 
+Entro lunedì finire TUTTA la revisione dei Laboratori
+
+Fare tutti i disegni possibili
+
+Fare gli screenshoot di tutti i disegni e nominare tutti i disegni con il nome del file che lo contiene (tenere la cartella degli script e disegni vicino), es : smdppbezier_interp_nome-disegno.m
+
+Rimuovere tutti i file delle lezioni dai laboratori e mantenere SOLO la cartella Casa con rinominazione a mnc...2425 modificando anche tutti gli add_path.m
+
+Ripasso + Revisione
+
+Finire la parte della fattorizzazione (e caricare gli appunti della fattorizzazione su git hub nella parte materiale didattico-appunti ordinati- modulo 2...)
+
+Dai un'occhiata a tutti gli appunti, anche veloce
+
+FINE.
 
 

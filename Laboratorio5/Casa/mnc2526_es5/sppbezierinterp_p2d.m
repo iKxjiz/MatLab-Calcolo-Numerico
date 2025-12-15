@@ -5,6 +5,7 @@ close all
 
 vcol=['r','g','b','k'];
 open_figure(1);
+grid on;
 
 %legge la lista di punti da interpolare da file .txt
 Q=load('paperino.txt');
@@ -51,6 +52,7 @@ point_plot(ppP.cp,'r-o',2,'k','r',4);
 
 open_figure(2);
 axis_plot(0.25,0.01);
+grid on;
 
 np=100; % numero di punti per il disegno della curva
 

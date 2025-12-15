@@ -105,7 +105,7 @@ Area = curv2_ppbezier_plot(Atot, -200, 'k-', 3);
 
 % coloro il baunding box della figura
 [ymin,ymax]=mm_vect(Area(:,2));
-[x, y] = rectangle_plot(0,600,ymin,ymax,'k',3)
+[x, y] = rectangle_plot(0,600,ymin,ymax,'k',3);
 Rec = [x', y'];
 col = [204, 255, 204] / 255; % verde chiaro
 point_fill(Rec, col);
