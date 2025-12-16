@@ -21,20 +21,23 @@ P=[x',y'];
 
 %apre nuova figure
 open_figure(2);
-
+axis_plot(3, 0.2)
+grid on;
 %definisce vettore di colori
-vcol=['r','g','b','c','m','y','k'];
+vcol=['r','g','b','c','m','k'];
 
 %definisce numero di rotazioni da effettuare
-ncurv=...;
+ncurv= 7;
 
 %definisce angolo e matrice di rotazione
-theta=...;
-R=...;
+theta=((2*pi)/ncurv);
+R= get_mat2_rot(theta);
 
 %disegno delle curve ognuna ruotata e con colore differente
 for i=1:ncurv
-    col=vcol(mod(i,7)+1);
-    P=point_trans_plot(...);
+    col=vcol(mod(i,6)+1);
+    P=point_trans_plot(P, R, col);
 end
-
+% questo ciclo disegna ncurv cardioidi ruotate di un angolo costante
+% e con colori diversi. Ad ogni iterazione la matrice P viene aggiornata
+% con la nuova posizione della cardioide ruotata.

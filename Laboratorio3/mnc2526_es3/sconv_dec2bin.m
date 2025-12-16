@@ -4,7 +4,9 @@
 %di un numero in virgola e verifica se la rappre-
 %sentazione è esatta o meno
 %************************************************
-clear
+clear all
+clc
+
 disp('Converte un reale (parte intera e frazionaria) da base 10 a base 2');
 z=input('dai il numero reale: ');
 k=input('dai il numero max. di cifre per la parte frazionaria: ');
@@ -27,9 +29,9 @@ for i=1:length(x)
 end
 %Stampa punto radice e se del caso uno 0 come parte frazionaria
 if (l==0)
-  fprintf('.0');
+   fprintf('.0');
 else
-  fprintf('.');
+   fprintf('.');
 end
 %Stampa parte frazionaria
 for i=1:l
@@ -38,7 +40,7 @@ end
 fprintf('\n');
 %Stampa di controllo su rappresentazione esatta
 if (z==0)
-    fprintf('Rappresentazione esatta\n');
+   fprintf('Rappresentazione esatta\n');
 else
-    fprintf('Rappresentazione NON esatta\n');
+   fprintf('Rappresentazione NON esatta\n');
 end

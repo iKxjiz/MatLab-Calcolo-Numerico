@@ -1,15 +1,14 @@
 %script di prova per disegno della cardioide e animazione
 %figure('Renderer', 'painters', 'Position', [10 10 1000 800])
-clear
+clear all
 close all
+clc
+
+% Intervallo t ∈ [a,b] e numeri di punti da valutare (np)
+a = 0;
+b = 2*pi;
+np = 200;
 
 open_figure(1);
-axis_plot();
-
-t = linspace(0.2*pi, 100);
-curv2_plot('c2_cardioide', 0,2*pi, 100, 'b-', 2);
-
-% Che cosa succede se cambio intervallo ?
-% Che cosa succede se gli altri parametri ?
-
-
+axis_plot(2, 0.5);
+curv2_plot('c2_cardioide',a, b, np, 'b-', 4);

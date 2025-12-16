@@ -6,7 +6,9 @@ Da fare :
 
 Programma Settimanale :
 
-Entro lunedì finire TUTTA la revisione dei Laboratori
+Entro lunedì finire TUTTA la revisione dei Laboratori ( QUASI FINITO )
+
+% FARE ASSOLUTAMENTE I DISEGNIIIIII E CREARE LA CARTELLA "DISEGNI SU GITHUB"
 
 Fare tutti i disegni possibili
 
@@ -21,6 +23,8 @@ Finire la parte della fattorizzazione (e caricare gli appunti della fattorizzazi
 Dai un'occhiata a tutti gli appunti, anche veloce
 
 Aggiornare il README.md della repo
+
+Segnati i punti deboli, dove pensi di non avere le cose solide (tra gli esercizi)
 
 FINE.
 

@@ -25,20 +25,22 @@ point_plot(P,[col(4),'-o'],2,col(4));
 %disegna il bounding-box in nero
 rectangle_plot(xmin,xmax,ymin,ymax,'k-',2);
 
-%calcola il baricentro
-%TO DO
+%calcola il baricentro (la metà)
+B = 0.5 * [xmin+xmax, ymin+ymax];
 
 %definisce matrice di traslazione T e la sua inversa Tinv
-%TO DO
+T = get_mat_trasl(-B);
+Tinv = get_mat_trasl(B);
 
 %definisce angolo alpha di rotazione
-alpha=0.2*pi;
+%alpha=0.2*pi;
+alpha = pi/2;
 
 %definisce matrice di rotazione
-%TO DO
+R = get_mat2_rot(alpha)
 
 %definisce matrice composta di rotazione rispetto al baricentro
-%TO DO
+M = Tinv * R * T;
 
 %apre nuova figure
 open_figure();
@@ -46,10 +48,11 @@ open_figure();
 axis_plot(0.5,0.05);
 
 %applica matrice di rotazione alla poligonale
-%TO DO
+P = point_trans_plot(P, M, 'r-', 3);
 
 %calcola bounding-box oggetto trasformato
-%TO DO
+[xmin,xmax]=mm_vect(P(:,1));
+[ymin,ymax]=mm_vect(P(:,2));
 
 %disegna poligonale e bounding-box in rosso
-%TO DO
+rectangle_plot(xmin,xmax,ymin,ymax,'b-',2);

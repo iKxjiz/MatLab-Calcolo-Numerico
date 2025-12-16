@@ -16,7 +16,8 @@ fprintf('Lunghezza della curva: %e\n',val);
 
 %scaliamo ora la curva affinché abbia lunghezza unitaria
 s=1/val;
-%TO DO
+S = get_mat_scale([s,s]);
+mdppP.cp = point_trans(mdppP.cp, S);
 
 %disegniamo curva scalata
 curv2_mdppbezier_plot(mdppP,40,'r-',2);

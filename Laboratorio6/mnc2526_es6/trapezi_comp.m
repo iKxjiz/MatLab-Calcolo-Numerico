@@ -22,21 +22,21 @@ I=h*(0.5*(y(1)+y(n+1))+sum(y(2:n)));
 
 %visualizzazione grafica
 if (fp>0)
-     figure(1)
-     title('Trapezi Composto');
-     hold on;
+    figure(1)
+    title('Trapezi Composto');
+    hold on;
     %grafico funzione integranda
-     xv=linspace(a,b,200);
-     yv=fun(xv);
-     plot(xv,yv,'b-','LineWidth',1.5);
+    xv=linspace(a,b,200);
+    yv=fun(xv);
+    plot(xv,yv,'b-','LineWidth',1.5);
     %grafico valutazioni trapezi composta
-     y=fun(x);
-     plot(x,y,'r-+','LineWidth',1.5);
-     plot([a,b],[0,0],'k','LineWidth',1.5);
+    y=fun(x);
+    plot(x,y,'r-+','LineWidth',1.5);
+    plot([a,b],[0,0],'k','LineWidth',1.5);
     %piecewise linear interpolation
-     for i=1:n+1
-      plot([x(i),x(i)],[0,y(i)],'r-','LineWidth',1.5);
-     end
+    for i=1:n+1
+        plot([x(i),x(i)],[0,y(i)],'r-','LineWidth',1.5);
+    end
 end
 
 end

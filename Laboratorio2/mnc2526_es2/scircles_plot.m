@@ -1,29 +1,49 @@
-%Viene generata una tabulazione della funzione sin(x)
-%in corrispondenza di punti equispaziati nell'intervallo [0,pi]
-%input: numero di valori da generare
-%output: tabulazione (stampa)
-clear
+% A4 + B1
+
+clear all
 clc
-%n=input('numero di valori da tabulare: ');
-n = 13;
-t=linspace(0,2*pi,n);
-r = 5;
+
+% Dati iniziali : centro e raggio
 cx = 0;
 cy = 0;
+r = 5;
 
-[x,y] = circle(r, cx, cy, n);
-% Disegno delle funzioni :
+% n : numero di punti
+n = 13;
 
-figure;
-axis equal
+% Lato del poligono : lato = 2 * r * sin(pi/n);
+% quindi raggio piccolo r_p delle circonferenze tangenti :
+r_piccolo = r * sin(pi/12);
+
+% Genera punti sulla circonferenza principale (quella grande)
+[x, y] = fcircle(n, cx, cy, r);
+
+% Disegno :
+open_figure(1);
+title("Circonferenza");
+plot(x, y, 'r-', 'LineWidth', 2);
 hold on
-plot(x, y)
+axis equal
+grid on
+xlabel('X');
+ylabel('Y');
+title("Circonferenza con 12 circonferenze tangenti");
 
-% Raggio delle singole circonferenze
-rt = (2*pi)/n;
+% Disegno delle 12 circonferenze :
 
-function [x, y] = circle(r, cx, cy, n)
-t=linspace(0,2*pi,n);
-x = cx + r*cos(t);
-y = cy + r*sin(t);
+for i = 1:12
+    angle = (i-1)*2*pi /12;
+    cx = r * cos(angle);
+    cy = r * sin(angle);
+    circle2_plot([cx, cy], r_piccolo, 50, 'b-', 2);
+
+    % Per riempire le circonferenze :
+    t = linspace(0, 2*pi, 50);
+    j = r_piccolo * cos(t) + cx;
+    k = r_piccolo * sin(t) + cy;
+    % Nota che j e k (e anche t) sono tutte righe 1*n, point_fill vuole colonne
+    % quindi si fa la trasposizione con il simbolo '
+    point_fill([j' k'], 'blue');
 end
+axis_plot(5);
+hold off

@@ -1,6 +1,5 @@
 close all;
 clear all;
-clc
 
 open_figure(1);
 axis_plot(1.5, 0.125);
@@ -11,7 +10,7 @@ a = 0;
 b = 2*pi;
 n = 20;
 mp = 100;
-tol = 1.0e-2; % Tolleranza buona in molti casi
+tol = 1.0e-6; % Tolleranza buona in molti casi
 param=0;
 
 %Determinare la circonferenza per interpolazione di Hermite con una curva
@@ -28,7 +27,7 @@ Pxy = ppbezier_val(ppP, t);
 [x, y] = cp2_circle(t);
 Qxy = [x', y'];
 
-MaxErr = max(vecnorm((Pxy-Qxy)'));
+MaxErr = max(sqrt(sum((Pxy-Qxy).^2,2)));
 fprintf("Massimo errore %e\n", MaxErr);
 % Domanda, come lo si gestisce ? cioè se è grande, come lo si diminuisce ?
 

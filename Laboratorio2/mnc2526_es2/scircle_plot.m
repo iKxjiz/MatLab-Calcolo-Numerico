@@ -1,25 +1,24 @@
-%Viene generata una tabulazione della funzione sin(x)
-%in corrispondenza di punti equispaziati nell'intervallo [0,pi]
-%input: numero di valori da generare
-%output: tabulazione (stampa)
-clear
+clear all
 clc
-n = input('numero di valori da tabulare: ');
-t = linspace(0,2*pi,n);
-r = 5;
+
+% Dati iniziali : centro e raggio
 cx = 0;
 cy = 0;
+r = 5;
 
-[x,y] = circle(r, cx, cy, t);
+% n : numero di punti
+n = 100;
 
-% Disegno delle funzioni :
+% Genera punti sulla circonferenza
+[x, y] = fcircle(n, cx, cy, r);
 
-figure;
-axis equal
+% Disegno :
+
+figure(1);
+title("Circonferenza");
+plot(x, y, 'r-', 'LineWidth', 3);
 hold on
-plot(x, y)
-
-function [x, y] = circle(r, cx, cy, t)
-x = cx + r*cos(t);
-y = cy + r*sin(t);
-end
+axis equal
+grid on
+xlabel('X');
+ylabel('Y');

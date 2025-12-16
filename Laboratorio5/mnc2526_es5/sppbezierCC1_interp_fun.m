@@ -3,10 +3,10 @@
 % definire una function con la funzione test e settare
 % n      : numero dei tratti
 % tipo   : di distribuzione dei punti 1=equispaziati 2=chebyshev
-% Viene prodotto il grafico della funzione test, del polinomio
+% Viene prodotto il grafico della funzione test, del polinomio 
 % interpolante e dei punti di interpolazione
 clear
-%close all
+close all
 
 %definire la funzione test: vedere le funzioni test presenti nella cartella
 %funzione test ed estremi intervallo di definizione
@@ -19,11 +19,11 @@ n=8;
 tipo=1;
 switch (tipo)
     case 1
-        %n+1 punti equispaziati
-        x=linspace(a,b,n+1);
+%n+1 punti equispaziati
+      x=linspace(a,b,n+1);
     case 2
-        %n+1 punti secondo la distribuzione di Chebyshev
-        x=chebyshev2(a,b,n);
+%n+1 punti secondo la distribuzione di Chebyshev
+      x=chebyshev2(a,b,n);
 end
 
 %n+1 osservazioni campionate dalla funzione test
@@ -36,8 +36,8 @@ m=21;
 %punti su cui valutare l'interpolante polinomiale modo 2
 in=0;
 for i=1:n
-    xv(in+1:in+m)=linspace(x(i),x(i+1),m);
-    in=in+m-1;
+   xv(in+1:in+m)=linspace(x(i),x(i+1),m);
+   in=in+m-1;
 end
 
 %Metodo di interpolazione cubica tratti C1 di Hermite
@@ -52,7 +52,6 @@ yf=fun(xv);
 %grafico funzione test e interpolante Lagrange
 figure(1);
 %grafico funzione test e interpolante cubita a tratti
-subplot(3,1,3);
 hold on;
 title('Cubica a tratti C1')
 %disegno punti di interpolazione
@@ -67,14 +66,11 @@ yvcubic=abs(yf-yvc);
 
 %grafici errori assoluti analitici
 figure(2);
-subplot(3,1,3);
-
 plot(xv,yvcubic,'g-','LineWidth',2);
 title('Eanal: cubica a tratti C1')
 
 %grafici errori assoluti analitici in scala logaritmica
 figure(3);
-subplot(3,1,3);
 semilogy(xv,yvcubic,'g-','LineWidth',2);
 title('scala log. Eanal: cubica a tratti C1')
 

@@ -12,6 +12,7 @@ ex=7;
 p.deg=g;
 p.ab=[a,b];
 p.cp=cB';
+
 %definizione polinomio nella base di Bernstein in single
 sp.deg=g;
 sp.ab=single([a,b]);
@@ -30,8 +31,14 @@ st=single(t);
 % valutazione polinomio nella base di Bernstein con Alg.2
 % function decast_val del toolbox anmglib_5.0
 % Alg.2 sia in double che in single
-yB = decast_val(p,t);
-syB= decast_val(sp,t);
+
+yB= decast_val(p,t);
+% p : struttura che definisce il polinomio
+% t : punti di valutazione in [a,b]
+
+syB= single(decast_val(sp,st));
+% sp : struttura che definisce il polinomio in single
+% st : punti di valutazione in single in [a,b]
 
 figure('Position', [10 10 500 600]);
 subplot(2,1,1);
@@ -41,9 +48,14 @@ plot(t,zeros(1,np),'k-','LineWidth',1.5);
 title('Polinomio test','FontWeight','bold')
 
 subplot(2,1,2);
+
 %calcola errore relativo
-relerr=abs((sy-dy)./dy);
-%plot(t,relerr,'b.-');
+relerr=abs((yB - double(syB))./yB);
+% errore relativo : |p_double - p_single| / |p_double|,
+% con p_double e p_single valutati con Alg.2
+% in double e single precisione rispettivamente.
+
+plot(t,relerr,'b.-');
 
 % valutazione polinomio nella base monomiale (polyval di MATLAB)
 % yP = polyval(fliplr(cP),t);
