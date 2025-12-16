@@ -31,7 +31,7 @@ FINE.
 
 LISTA FIGURE DA FARE:
 
-- Marchingegno
+- Marchingegno (completato)
 - Quadri
 - Fiore
 - Petali
