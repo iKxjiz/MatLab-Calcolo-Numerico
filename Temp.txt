@@ -29,3 +29,16 @@ Segnati i punti deboli, dove pensi di non avere le cose solide (tra gli esercizi
 FINE.
 
 
+LISTA FIGURE DA FARE:
+
+- Marchingegno
+- Quadri
+- Fiore
+- Petali
+- Cuore con la bandiera della lituania
+- Bandiera Latvia
+- Bandiera Finlandia
+
+Quelli di git hub :
+
+

@@ -12,11 +12,11 @@ curv2_ppbezier_plot(ppS, 30, 'b-', 2);
 %% rettangolo interno
 rs.ab = [0, 0.25, 0.5, 0.75, 1];
 rs.cp = [
-     1.3, 0.3;
-     -1.3, 0.3;
-     -1.3, -0.3;
-     1.3, -0.3;
-     1.3, 0.3;];
+    1.3, 0.3;
+    -1.3, 0.3;
+    -1.3, -0.3;
+    1.3, -0.3;
+    1.3, 0.3;];
 rs.deg = 1;
 rs = curv2_ppbezier_de(rs, 2);
 curv2_ppbezier_plot(rs, 30, 'b-', 2);
@@ -73,16 +73,16 @@ disp(IIE');
 [~, ss] = ppbezier_subdiv(ss, tt3(3));
 % curv2_ppbezier_plot(ss, 30, 'g-');
 
-%unione 
-curva = curv2_ppbezier_join(ci, si, 1.0e-1);
-curva = curv2_ppbezier_join(curva, ce, 1.0e-2);
-curva = curv2_ppbezier_join(curva, ss, 1.0e-2);
+%unione
+curva = curv2_mdppbezier_join(ci, si, 1.0e-1);
+curva = curv2_mdppbezier_join(curva, ce, 1.0e-2);
+curva = curv2_mdppbezier_join(curva, ss, 1.0e-2);
 
-%% Colore 
+%% Colore
 R = get_mat2_rot(pi/2);
 
 for i = 1:4
-    Px = curv2_ppbezier_plot(curva, -40);
+    Px = curv2_mdppbezier_plot(curva, -40);
     if (mod(i, 2) == 0)
         point_fill(Px, 'b');
     else
@@ -97,7 +97,7 @@ end
 
 
 function [x, y] = f(t)
-    r=(abs(cos(t)/2).^5+abs(sin(t)).^5).^(-1/5);
-    x = r.*cos(t);
-    y = r.*sin(t);
+r=(abs(cos(t)/2).^5+abs(sin(t)).^5).^(-1/5);
+x = r.*cos(t);
+y = r.*sin(t);
 end

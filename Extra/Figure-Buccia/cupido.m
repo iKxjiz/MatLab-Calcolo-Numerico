@@ -202,11 +202,11 @@ M = T1 * R * S * T;
 freccia.cp = point_trans(freccia.cp, M);
 
 % disegno freccia con bordo blu e sfondo rosso
-disFreccia = curv2_ppbezier_plot(freccia, -np);
+disFreccia = curv2_mdppbezier_plot(freccia, -np);
 point_fill(disFreccia, 'b', 'r-', 1.5);
 
 %% Cuore rosso base
-disCuore = curv2_ppbezier_plot(cuore, -np);
+disCuore = curv2_mdppbezier_plot(cuore, -np);
 point_fill(disCuore, 'r', 'b-', 1.5);
 %% Segmento verticale centrale cuore-freccia
 segCen.ab = [0,1];

@@ -17,7 +17,6 @@ clc
 
 
 %%  PARAMETRI DI CONFIGURAZIONE
-
 n = 5;          % Grado della curva di Bézier (n+1 punti di controllo)
 mp = 150;       % Numero di punti per il plot delle curve
 a = -1;         % Estremo sinistro dell'intervallo parametrico
@@ -26,7 +25,6 @@ tipo = 2;       % Tipo di distribuzione: 1=equispaziata, 2=Chebyshev
 
 
 %% INIZIALIZZAZIONE FIGURA
-
 open_figure();
 axis_plot(1.5, 0.125);
 hold on;
@@ -34,7 +32,6 @@ grid on;
 
 
 %% PLOT DELLE CURVE ORIGINALI (alta risoluzione)
-
 % Disegna le curve bicorn originali con molti punti per mostrare
 % la forma "reale" delle curve da interpolare
 %[x_plot, y1_plot] = curv2_plot('c2_bicorn1', a, b, mp, 'k-', 1.5);
@@ -42,7 +39,6 @@ grid on;
 
 
 %% SELEZIONE PUNTI DI INTERPOLAZIONE
-
 switch tipo
     case 1
         % Distribuzione EQUISPAZIATA
@@ -67,7 +63,6 @@ fprintf('Grado della curva di Bézier: %d\n\n', n);
 
 
 %% CAMPIONAMENTO DELLE CURVE NEI PUNTI SELEZIONATI
-
 % Valuta le due curve bicorn nei punti t scelti
 [x, y1] = c2_bicorn1(t);
 [x, y2] = c2_bicorn2(t);
@@ -80,7 +75,6 @@ y2 = y2(:);
 
 
 %% COSTRUZIONE MATRICI DI PUNTI
-
 % Q1 e Q2 sono matrici (n+1)x2 con le coordinate (x,y) dei punti
 Q1 = [x, y1];   % Punti della prima bicorn
 Q2 = [x, y2];   % Punti della seconda bicorn
@@ -96,14 +90,12 @@ point_plot(Q2, 'ro', 6, 'r');  % Punti curva 2 in rosso
 
 
 %% CAMBIO DI VARIABILE: [a,b] → [0,1]
-
 % Le curve di Bézier sono definite canonicamente su [0,1]
 % Mappiamo i parametri t dall'intervallo [a,b] a [0,1]
 tt = (t - a) / (b - a);
 
 
 %% COSTRUZIONE MATRICE DI INTERPOLAZIONE
-
 % Calcola i polinomi di Bernstein di grado n nei punti tt
 % B è una matrice (n+1)x(n+1) dove B(i,j) = B_j^n(tt_i)
 % Questa è la matrice del sistema lineare per l'interpolazione
@@ -115,7 +107,6 @@ B = bernst_val(n, tt);
 
 
 %% RISOLUZIONE SISTEMI LINEARI
-
 % Per trovare i punti di controllo della curva di Bézier interpolante:
 % B * cx = x   →  cx = B \ x  (coordinate x dei punti di controllo)
 % B * cy = y   →  cy = B \ y  (coordinate y dei punti di controllo)
@@ -136,7 +127,6 @@ disp([cx, cy2]);
 
 
 %% DEFINIZIONE STRUTTURE CURVE DI BÉZIER
-
 % Prima curva di Bézier (interpola bicorn1)
 Pbez1.deg = n;              % Grado della curva
 Pbez1.ab = [a, b];          % Intervallo parametrico
@@ -149,7 +139,6 @@ Pbez2.cp = [cx, cy2];
 
 
 %% VISUALIZZAZIONE CURVE DI BÉZIER INTERPOLANTI
-
 % Disegna le curve di Bézier interpolanti con alta risoluzione
 curv2_bezier_plot(Pbez1, mp, 'b', 2);  % Curva 1 in blu (spessa)
 curv2_bezier_plot(Pbez2, mp, 'r', 2);  % Curva 2 in rosso (spessa)
@@ -157,16 +146,13 @@ curv2_bezier_plot(Pbez2, mp, 'r', 2);  % Curva 2 in rosso (spessa)
 
 %% SEZIONE: INTERSEZIONE E COSTRUZIONE CURVA CHIUSA
 
-
 %% VISUALIZZAZIONE PUNTI INIZIALI DELLE CURVE
-
 % Evidenzia i primi punti di controllo (estremi iniziali) delle due curve
 point_plot(Pbez1.cp(1,:), 'ko', 10);  % Primo punto curva 1 (nero)
 point_plot(Pbez2.cp(1,:), 'ko', 10);  % Primo punto curva 2 (nero)
 
 
 %% CALCOLO PUNTI DI INTERSEZIONE
-
 % Trova le intersezioni tra le due curve di Bézier
 % INPUT:  Pbez1, Pbez2 - strutture delle curve di Bézier
 % OUTPUT: IP1P2 - coordinate (x,y) dei punti di intersezione [2 x num_intersez]
@@ -185,7 +171,6 @@ end
 
 
 %% NUOVA FIGURA PER LA CURVA COMPOSTA
-
 open_figure();
 axis_plot(1.5, 0.125);
 hold on;
@@ -195,7 +180,6 @@ axis equal;
 
 
 %% ESTRAZIONE TRATTI CENTRALI DELLE CURVE
-
 % CURVA 1: Suddivide Pbez1 nei punti di intersezione per estrarre
 %          il tratto compreso tra le due intersezioni
 
@@ -221,7 +205,6 @@ axis equal;
 
 
 %% COSTRUZIONE CURVA COMPOSITA (JOIN)
-
 % Unisce i due tratti centrali p1 e p2 in una curva di Bézier a tratti
 % mantenendo la continuità desiderata
 
@@ -235,14 +218,12 @@ ppQ = curv2_mdppbezier_join(p1, p2, tol);
 
 
 %% CHIUSURA DELLA CURVA
-
 % Chiude la curva composita connettendo l'ultimo punto con il primo
 % per ottenere una curva chiusa
 ppQ = curv2_mdppbezier_close(ppQ);
 
 
 %% VISUALIZZAZIONE CURVA FINALE
-
 % Plot della curva di Bézier a tratti chiusa
 np = 100;  % Numero di punti per il plot di ogni tratto
 
@@ -253,7 +234,6 @@ Px = curv2_ppbezier_plot(ppQ, -np);
 
 
 %% RIEMPIMENTO REGIONE
-
 % Riempie l'interno della curva chiusa con colore
 % point_fill: riempie la regione definita dai punti Px
 % 'g': colore bordo (green)
@@ -262,7 +242,6 @@ Px = curv2_ppbezier_plot(ppQ, -np);
 point_fill(Px, 'g', 'b', 1.5);
 
 %% Rotazione
-
 %Determinare la circonferenza per interpolazione di Hermite con una curva
 %cubica a tratti ppP
 t = chebyshev2(0, 2*pi, 20);
