@@ -29,7 +29,7 @@ LISTA FIGURE DA FARE:
 - Marchingegno (completato)
 - Quadri (completato)
 - Fiore (completato)
-- Petali
+- Petali (completato)
 - Cuore con la bandiera della lituania
 - Bandiera Latvia
 - Bandiera Finlandia
