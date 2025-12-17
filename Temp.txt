@@ -30,7 +30,7 @@ LISTA FIGURE DA FARE:
 - Quadri (completato)
 - Fiore (completato)
 - Petali (completato)
-- Cuore con la bandiera della lituania
+- Cuore con la bandiera della lituania (completato)
 - Bandiera Latvia
 - Bandiera Finlandia
 
