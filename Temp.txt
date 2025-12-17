@@ -1,9 +1,3 @@
-Da fare : 
-
-- Vedere tutti i percorsi delle cartelle e programmare una pulizia delle cose inutili, non guardare i Laboratori, pulisci il resto 
-- Guardare l'interpolzaione di funzione e basta per sta sera 
-- Prima di staccare fare un piccolo programma per i giorni a venire 
-
 Programma Settimanale :
 
 Entro lunedì finire TUTTA la revisione dei Laboratori ( QUASI FINITO )
@@ -33,8 +27,8 @@ OCCHIOOOO =====>>> GUARDA COME CALCOLARE L'AREA E LA LUNGHEZZA DI UNA CURVA MULT
 LISTA FIGURE DA FARE:
 
 - Marchingegno (completato)
-- Quadri
-- Fiore
+- Quadri (completato)
+- Fiore (completato)
 - Petali
 - Cuore con la bandiera della lituania
 - Bandiera Latvia
