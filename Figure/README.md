@@ -11,7 +11,7 @@ Le immagini sono generate tramite gli script presenti nel repository e raccolte 
 
 <table>
   <tr>
-     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_elica_rosso_blu.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_lame_ruotate_rosso_blu.png" /></td>
      <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_elica_rosso_blu.png" /></td>
   </tr>
   <tr>
