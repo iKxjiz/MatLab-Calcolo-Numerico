@@ -31,14 +31,17 @@ LISTA FIGURE DA FARE:
 - Fiore (completato)
 - Petali (completato)
 - Cuore con la bandiera della lituania (completato)
-- Bandiera Latvia
-- Bandiera Finlandia
+- Bandiera Latvia (completato)
+- Bandiera Finlandia (completato)
+-
 
 Quelli di git hub :
 
 -------------
 
 NOTE PER ESAME :
-- controlla il risultato del disegno su matlab, apri matlab e fai girare il disegno per capire se vanno bene gli spessori ecc...(in breve, controlla il risultato anche dall'ambiente matlab)
+- controlla il risultato del disegno su matlab, apri matlab e fai girare il disegno per capire se vanno bene gli spessori ecc...(in breve, controlla il risultato anche dall'ambiente matlab) (mantenere lo spessore del disegno intorno a 1.5)
+
+baricentro = mean(quadro_unito.cp);
 
 

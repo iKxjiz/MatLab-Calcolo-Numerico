@@ -5,18 +5,18 @@ clc
 
 %% FUNZIONI
 function [x, y] = cerchio(t)
-    x = cos(t);
-    y = sin(t);
+x = cos(t);
+y = sin(t);
 end
 
 function [ppbezQ, T, R] = align_curve(ppbezP)
-    ncp = length(ppbezP.cp(:, 1)); %numero di punti di controllo
-    ppbezQ = ppbezP;
-    T = get_mat_trasl(-ppbezP.cp(1, :));
-    alfa = -atan2(ppbezP.cp(ncp, 2) - ppbezP.cp(1, 2), ppbezP.cp(ncp, 1) - ppbezP.cp(1, 1));
-    R = get_mat2_rot(alfa);
-    M = R*T;
-    ppbezQ.cp = point_trans(ppbezQ.cp, M);
+ncp = length(ppbezP.cp(:, 1)); %numero di punti di controllo
+ppbezQ = ppbezP;
+T = get_mat_trasl(-ppbezP.cp(1, :));
+alfa = -atan2(ppbezP.cp(ncp, 2) - ppbezP.cp(1, 2), ppbezP.cp(ncp, 1) - ppbezP.cp(1, 1));
+R = get_mat2_rot(alfa);
+M = R*T;
+ppbezQ.cp = point_trans(ppbezQ.cp, M);
 end
 
 
@@ -34,16 +34,16 @@ curv2_ppbezier_plot(ppC, 40, "b-", 2, "b");
 pp.deg=2;
 pp.ab=[0,1];
 pp.cp=[0,-2;    %basso
-        0,-1;   %centro
-        -1,-1]; %sinistra
+    0,-1;   %centro
+    -1,-1]; %sinistra
 %point_plot(pp.cp, "g-o");
 
 % parte sinistra alta
 pc.deg=2;
 pc.ab=[0,1];
-pc.cp=[-1,-1;   %sinistra 
-        0,-1;   %centro
-        0,0];   %alto
+pc.cp=[-1,-1;   %sinistra
+    0,-1;   %centro
+    0,0];   %alto
 %point_plot(pc.cp, "g-o");
 
 % unione
