@@ -20,7 +20,7 @@ Le immagini sono generate tramite gli script presenti nel repository e raccolte 
   </tr>
   <tr>
      <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_anelli_intersecati.png" /></td>
-     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_ceco.png" /></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_spirale.png" /></td>
   </tr>
   <tr>
      <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_cuore_con_rettangolo_lituania.png" /></td>
@@ -48,6 +48,6 @@ Le immagini sono generate tramite gli script presenti nel repository e raccolte 
   </tr>
   <tr>
      <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_segnale.png" /></td>
-     
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_ceco.png" /></td>
   </tr>
 </table>
