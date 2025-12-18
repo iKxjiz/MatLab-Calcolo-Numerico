@@ -11,6 +11,14 @@ Le immagini sono generate tramite gli script presenti nel repository e raccolte 
 
 <table>
   <tr>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_elica_rosso_blu.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_elica_rosso_blu.png" /></td>
+  </tr>
+  <tr>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_polipo.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_quadri.png" /></td>
+  </tr>
+  <tr>
      <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_anelli_intersecati.png" /></td>
      <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_ceco.png" /></td>
   </tr>
@@ -35,15 +43,11 @@ Le immagini sono generate tramite gli script presenti nel repository e raccolte 
      <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_petali.png" /></td>
   </tr>
   <tr>
-     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_polipo.png" /></td>
-     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_quadri.png" /></td>
-  </tr>
-  <tr>
      <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_scudo.png" /></td>
      <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_scudo_fiore_giallo.png" /></td>
   </tr>
   <tr>
      <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_segnale.png" /></td>
-     <td><img width="676" height="855" src="" /></td>
+     
   </tr>
 </table>
