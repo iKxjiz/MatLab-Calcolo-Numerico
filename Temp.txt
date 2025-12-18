@@ -47,3 +47,21 @@ Template per le suddivisioni :
 
 curv2_ppbezier_plot(sx, np, 'g', 2);
 curv2_ppbezier_plot(dx, np, 'm', 2);
+
+Template per l'errore :
+
+% Stima errore di interpolazione
+npt = 200;
+t = linspace(a, b, npt);
+Cxy = ppbezier_val(ppC, t);
+[x, y] = cp2_circle(t);
+Qxy = [x', y'];
+MaxErr = max(vecnorm((Cxy - Qxy)'));
+fprintf("Massimo errore: %e\n", MaxErr);
+
+bool = MaxErr <= 2.0e-03;
+if bool == 1
+    fprintf("L'errore è contenuto");
+else
+    fprintf("L'errore NON è contenuto");
+end
