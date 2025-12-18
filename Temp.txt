@@ -10,11 +10,7 @@ Segnati i punti deboli, dove pensi di non avere le cose solide (tra gli esercizi
 
 FINE.
 
-OCCHIOOOO =====>>> GUARDA COME CALCOLARE L'AREA E LA LUNGHEZZA DI UNA CURVA MULTIGRADO (chiusa)
-
 VEDERE tossico.m di FILIPPO
-
-
 
 Quelli di git hub :
 
@@ -65,3 +61,6 @@ if bool == 1
 else
     fprintf("L'errore NON è contenuto");
 end
+
+>> s = settings;
+>> s.matlab.desktop.Zoom.PersonalValue=150

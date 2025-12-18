@@ -1,31 +1,67 @@
 # MATLAB Calcolo Numerico
 
-Repository degli esercizi di laboratorio per il corso di Metodi Numerici Computazionali (MNC).
+> Ho condiviso questi appunti, esercizi e figure gratuitamente. La loro realizzazione ha richiesto numerose ore di studio e lavoro; se li trovassi utili, ti invito a lasciare una stella (⭐) alla repository come forma di supporto e riconoscimento.
 
-## Struttura
+Repository degli esercizi di laboratorio per il corso di **Metodi Numerici Computazionali (MNC)**.
+
+Questo repository contiene tutto il materiale necessario per seguire e approfondire gli argomenti del corso: esercizi risolti, script MATLAB commentati, figure generate con curve di Bézier, librerie per la geometria computazionale e materiale didattico di riferimento.
+
+---
+
+## Struttura del Repository
 
 ```
-├── Laboratorio1/        # Operazioni matriciali, vettori, fattoriale
-├── Laboratorio2/        # Funzioni, plotting, vettorizzazione, cardioidi
-├── Laboratorio3/        # Trasformazioni geometriche 2D, conversioni binarie
-├── Laboratorio4/        # Curve di Bezier, De Casteljau, valutazione polinomiale
-├── Laboratorio5/        # Interpolazione (Lagrange, Chebyshev, fenomeno di Runge)
-├── Laboratorio6/        # Integrazione numerica (trapezi compositi, Simpson)
-├── Laboratorio7/        # Metodi avanzati, ricerca binaria
-├── Laboratorio8/        # Sistemi lineari (fattorizzazione LU/QR, matrici di Hilbert)
-├── Extra/               # Esercizi pre-esame, figure, curve di Bezier
-├── Pre-Esame/           # Materiale preparazione esami
-├── anmglib_5.0/         # Libreria geometria computazionale completa
-├── short_anmglib_5.0/   # Versione ridotta libreria
-└── VecchiaLib/          # Libreria legacy
+├── Laboratorio1/           # Operazioni matriciali, vettori, fattoriale, gittate
+├── Laboratorio2/           # Funzioni, plotting, vettorizzazione, cardioidi
+├── Laboratorio3/           # Trasformazioni geometriche 2D, conversioni binarie
+├── Laboratorio4/           # Curve di Bézier, algoritmo De Casteljau, polinomi
+├── Laboratorio5/           # Interpolazione (Lagrange, Chebyshev, Runge)
+├── Laboratorio6/           # Integrazione numerica (trapezi, Simpson composito)
+├── Laboratorio7/           # Metodi avanzati, ricerca binaria, algoritmi
+├── Laboratorio8/           # Sistemi lineari (LU, QR, matrici di Hilbert)
+├── Figure/                 # Galleria di figure artistiche con curve di Bézier
+├── Extra/                  # Materiale aggiuntivo e simulazioni pre-appello
+├── Materiale-Didattico/    # Dispense, guide PDF, appunti delle lezioni
+├── anmglib_5.0/            # Libreria completa per geometria computazionale
+└── Libreria/               # Utilities e funzioni personalizzate
 ```
 
-## Libreria anmglib_5.0
+---
 
-Libreria MATLAB per geometria computazionale e modellazione parametrica:
+## Come Utilizzare
 
-- **Curve 2D/3D**: Bezier, NURBS, Spline, piecewise polynomial
-- **Superfici**: Bezier, NURBS, ruled, revolved, extruded
-- **Algoritmi**: De Casteljau, De Boor, Lane-Riesenfeld
-- **Trasformazioni**: rotazione, traslazione, scaling, simmetria
-- **Utilità**: intersezioni, offset, calcolo lunghezze/aree, parsing SVG
+1. **Clona la repository**:
+   ```bash
+   git clone https://github.com/iKxjiz/MatLab-Calcolo-Numerico.git
+   cd MatLab-Calcolo-Numerico
+   ```
+
+2. **Aggiungi la libreria al path MATLAB**:
+   ```matlab
+   addpath(genpath('anmglib_5.0'));
+   savepath;
+   ```
+
+3. **Esegui gli esercizi**:
+   - Apri MATLAB nella directory del laboratorio desiderato
+   - Esegui gli script `.m` presenti
+
+4. **Genera le figure**:
+   ```matlab
+   cd Figure
+   smdppbez_interp_italy  % Esempio: genera la bandiera italiana
+   ```
+
+---
+
+## Note
+
+- Gli script utilizzano la convenzione `s*.m` per gli script eseguibili e `f*.m` o `c*.m` per le funzioni
+- Molti esercizi richiedono la libreria `anmglib_5.0` per funzionare correttamente
+- Il materiale è aggiornato all'anno accademico 2025/2026
+
+---
+
+## Contributi
+
+Se trovi errori o vuoi migliorare il materiale, sentiti libero di aprire una issue o una pull request.
