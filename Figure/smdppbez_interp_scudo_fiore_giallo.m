@@ -124,7 +124,7 @@ set(gca, 'Color', col);
 
 % Scudo verde
 punti_scudo = curv2_mdppbezier_plot(ppP, -np, 'r', 3);
-point_fill(punti_scudo, 'g', 'r', 4);
+point_fill(punti_scudo, 'g', 'r', 3);
 
 % Costruzione stella completa (5 punte)
 alpha2 = (2*pi) / 5;
@@ -140,7 +140,7 @@ stella = curv2_mdppbezier_close(stella);
 % Cerchi rossi decorativi
 pr.cp = point_trans(pr.cp, R1);
 pr_points = curv2_mdppbezier_plot(pr, -np);
-point_fill(pr_points, 'r', 'r', 4);
+point_fill(pr_points, 'r', 'r', 2);
 
 for i = 1:4
     pr.cp = point_trans(pr.cp, R2);
@@ -150,7 +150,7 @@ end
 
 % Stella gialla
 punti_stella = curv2_mdppbezier_plot(stella, -np, 'm', 3);
-point_fill(punti_stella, 'y', 'r', 4);
+point_fill(punti_stella, 'y', 'r', 2);
 
 % FUNZIONE LOCALE
 

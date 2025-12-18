@@ -24,6 +24,24 @@ FINE.
 
 OCCHIOOOO =====>>> GUARDA COME CALCOLARE L'AREA E LA LUNGHEZZA DI UNA CURVA MULTIGRADO (chiusa)
 
+VEDERE tossico.m di FILIPPO
+
+
+
+Quelli di git hub :
+
+-------------
+
+NOTE PER ESAME :
+- controlla il risultato del disegno su matlab, apri matlab e fai girare il disegno per capire se vanno bene gli spessori ecc...(in breve, controlla il risultato anche dall'ambiente matlab) (mantenere lo spessore del disegno intorno a 1.5)
+
+baricentro = mean(bez.cp);
+
+
+--------
+
+COSE FATTE :
+
 LISTA FIGURE DA FARE:
 
 - Marchingegno (completato)
@@ -33,15 +51,7 @@ LISTA FIGURE DA FARE:
 - Cuore con la bandiera della lituania (completato)
 - Bandiera Latvia (completato)
 - Bandiera Finlandia (completato)
--
+- Anelli (completato)
 
-Quelli di git hub :
-
--------------
-
-NOTE PER ESAME :
-- controlla il risultato del disegno su matlab, apri matlab e fai girare il disegno per capire se vanno bene gli spessori ecc...(in breve, controlla il risultato anche dall'ambiente matlab) (mantenere lo spessore del disegno intorno a 1.5)
-
-baricentro = mean(quadro_unito.cp);
-
+FINITE (QUELLE DI FILIPPO)
 

@@ -92,7 +92,7 @@ bianco1 = curv2_mdppbezier_join(p1, p2, tol);
 bianco1 = curv2_mdppbezier_close(bianco1);
 bianco = curv2_mdppbezier_plot(bianco1, -mp, 'b', 2);
 
-point_fill(bianco, 'white', 'b', 3);
+point_fill(bianco, 'white', 'b', 2);
 
 %% Funzioni locali
 

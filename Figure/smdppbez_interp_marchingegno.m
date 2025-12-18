@@ -150,7 +150,7 @@ col = [204, 204, 204]/255;  % Colore grigio chiaro per lo sfondo
 set(gca, 'Color', col);
 
 % Primo petalo (verde)
-point_fill(lato_verde_sup_points, 'g', 'b', 1);
+point_fill(lato_verde_sup_points, 'g', 'b', 2);
 
 % Rotazioni successive di 90° per creare i 4 petali
 alpha = pi/2;  % Angolo di rotazione: 90°
@@ -163,9 +163,9 @@ for i = 1:3
 
     % Alterna i colori: petali dispari blu, petali pari verdi
     if mod(i, 2) > 0
-        point_fill(punti, 'b', 'b', 1);
+        point_fill(punti, 'b', 'b', 2);
     else
-        point_fill(punti, 'g', 'b', 1);
+        point_fill(punti, 'g', 'b', 2);
     end
 end
 

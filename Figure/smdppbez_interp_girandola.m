@@ -126,7 +126,7 @@ for i = 1:ncurv
     R = get_mat2_rot(teta(i));
     bezQ.cp = point_trans(ppQ.cp, R);
     Px_rot = curv2_ppbezier_plot(bezQ, -np, 'b-', 1.5);
-    point_fill(Px_rot, 'g', 'b', 3);
+    point_fill(Px_rot, 'g', 'b', 1.5);
 end
 
 end

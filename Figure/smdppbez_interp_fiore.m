@@ -4,6 +4,8 @@ clear all
 open_figure(1);
 np = 50;
 tol = 1.0e-2;
+col = [204, 204, 179]/255; 
+set(gca, 'Color', col)
 
 %% Cerchio base
 %Interpolazione cerchio
@@ -57,7 +59,7 @@ end
 
 %% Fiore rosso
 Px = curv2_ppbezier_plot(mangala, -np);
-point_fill(Px, 'r');
+point_fill(Px, 'k', 'k', 2);
 
 %% Fiore blu
 R = get_mat2_rot(alfa/2);
@@ -66,18 +68,18 @@ M = S * R;
 mangala.cp = point_trans(mangala.cp, M);
 
 Px = curv2_ppbezier_plot(mangala, -30);
-point_fill(Px, 'b');
+point_fill(Px, 'r', 'k', 2);
 
 %% Fiore bianco
 S = get_mat_scale([0.45, 0.45]);
 mangala.cp = point_trans(mangala.cp, S);
 
 Px = curv2_ppbezier_plot(mangala, -30);
-point_fill(Px, 'w');
+point_fill(Px, 'y', 'k', 2);
 
 %% Cerchio rosso
 [x, y] = circle2_plot([0, 0], 0.25, -np);
-point_fill([x', y'], 'r');
+point_fill([x', y'], 'k');
 
 %% Funzioni Locali
 

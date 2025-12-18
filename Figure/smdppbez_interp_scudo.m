@@ -88,7 +88,7 @@ open_figure(2);
 % Colorazione scudo
 col = [128, 128, 255]/255;
 Sx = curv2_mdppbezier_plot(scudo, -np, 'r', 3);
-point_fill(Sx, col);
+point_fill(Sx, col, 'k', 2);
 
 % Sfondo
 col = [255, 230, 230]/255;

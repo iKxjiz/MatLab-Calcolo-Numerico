@@ -76,6 +76,8 @@ curv2_ppbezier_plot(braccio, 30, 'r', 3);
 
 %% ===================== FIGURA 3: Figura finale (8 bracci) =====================
 open_figure(3);
+col = [255, 255, 204]/255; 
+set(gca, 'Color', col); 
 
 alfa = pi/4;  % rotazione di 45° = 2*pi/8 (per 8 bracci)
 R = get_mat2_rot(alfa);
@@ -97,7 +99,7 @@ finale.cp = point_trans(finale.cp, Tinv);
 
 % Disegna e riempi la figura finale
 Px = curv2_ppbezier_plot(finale, -30);
-point_fill(Px, 'b');
+point_fill(Px, 'b', 'r', 2);
 
 % --- Cerchio interno ---
 t = linspace(0, 2*pi, 8);
