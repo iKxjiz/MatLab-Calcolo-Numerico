@@ -20,7 +20,7 @@ tol = 1.0e-2;
 open_figure(1);
 
 % Campionamento con punti di Chebyshev
-% t = linspace(-pi/2, 3*pi/2, 100); % oppure si usa chebyshev2
+%t = linspace(-pi/2, 3*pi/2, 100); % oppure si usa chebyshev2
 t = chebyshev2(-pi/2, 3*pi/2, 100);
 [x, y] = cuore(t);
 Q = [x', y'];

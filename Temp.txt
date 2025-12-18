@@ -36,4 +36,9 @@ LISTA FIGURE DA FARE:
 
 Quelli di git hub :
 
+-------------
+
+NOTE PER ESAME :
+- controlla il risultato del disegno su matlab, apri matlab e fai girare il disegno per capire se vanno bene gli spessori ecc...(in breve, controlla il risultato anche dall'ambiente matlab)
+
 
