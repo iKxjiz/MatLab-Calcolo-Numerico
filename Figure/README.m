@@ -11,39 +11,39 @@ Le immagini sono generate tramite gli script presenti nel repository e raccolte 
 
 <table>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_anelli_intersecati.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_ceco.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_anelli_intersecati.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_ceco.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_cuore_con_rettangolo_lituania.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_cuore_france.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_cuore_con_rettangolo_lituania.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_cuore_france.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_finlandia.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_fiore.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_finlandia.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_fiore.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_germ.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_girandola.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_germ.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_girandola.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_italy.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_latvia.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_latvia.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_italy.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_marchingegno.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_petali.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_marchingegno.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_petali.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_polipo.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_quadri.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_polipo.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_quadri.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_scudo_fiore_giallo.png" width="400"/></td>
-    <td><img src="Immagini/smdppbez_interp_scudo.png" width="400"/></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_scudo.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_scudo_fiore_giallo.png" /></td>
   </tr>
   <tr>
-    <td><img src="Immagini/smdppbez_interp_segnale.png" width="400"/></td>
-    <td></td>
+     <td><img width="675" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_segnale.png" /></td>
+     <td><img width="676" height="855" src="" /></td>
   </tr>
 </table>
