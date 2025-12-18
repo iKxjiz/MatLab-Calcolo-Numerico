@@ -1,22 +1,10 @@
 Programma Settimanale :
 
-Entro lunedì finire TUTTA la revisione dei Laboratori ( QUASI FINITO )
-
-% FARE ASSOLUTAMENTE I DISEGNIIIIII E CREARE LA CARTELLA "DISEGNI SU GITHUB"
-
-Fare tutti i disegni possibili
-
-Fare gli screenshoot di tutti i disegni e nominare tutti i disegni con il nome del file che lo contiene (tenere la cartella degli script e disegni vicino), es : smdppbezier_interp_nome-disegno.m
-
-Rimuovere tutti i file delle lezioni dai laboratori e mantenere SOLO la cartella Casa con rinominazione a mnc...2425 modificando anche tutti gli add_path.m
-
 Ripasso + Revisione
 
 Finire la parte della fattorizzazione (e caricare gli appunti della fattorizzazione su git hub nella parte materiale didattico-appunti ordinati- modulo 2...)
 
 Dai un'occhiata a tutti gli appunti, anche veloce
-
-Aggiornare il README.md della repo
 
 Segnati i punti deboli, dove pensi di non avere le cose solide (tra gli esercizi)
 
@@ -55,3 +43,7 @@ LISTA FIGURE DA FARE:
 
 FINITE (QUELLE DI FILIPPO)
 
+Template per le suddivisioni :
+
+curv2_ppbezier_plot(sx, np, 'g', 2);
+curv2_ppbezier_plot(dx, np, 'm', 2);
