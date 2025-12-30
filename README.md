@@ -9,8 +9,6 @@ Repository degli esercizi di laboratorio per il corso di **Metodi Numerici Compu
   </tr>
 </table>
 
-Repository degli esercizi di laboratorio per il corso di **Metodi Numerici Computazionali (MNC)**.
-
 Questo repository contiene tutto il materiale necessario per seguire e approfondire gli argomenti del corso: esercizi risolti, script MATLAB commentati, figure generate con curve di Bézier, librerie per la geometria computazionale e materiale didattico di riferimento.
 
 ---
