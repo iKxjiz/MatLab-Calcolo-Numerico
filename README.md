@@ -1,6 +1,13 @@
 # MATLAB Calcolo Numerico
 
-> Ho condiviso questi appunti, esercizi e figure gratuitamente. La loro realizzazione ha richiesto numerose ore di studio e lavoro; se li trovassi utili, ti invito a lasciare una stella (⭐) alla repository come forma di supporto e riconoscimento.
+Repository degli esercizi di laboratorio per il corso di **Metodi Numerici Computazionali (MNC)**.
+
+<table>
+  <tr>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_lame_ruotate_rosso_blu.png" /></td>
+     <td><img width="676" height="855" src="https://github.com/iKxjiz/MatLab-Calcolo-Numerico/blob/main/Figure/Immagini/smdppbez_interp_elica_rosso_blu.png" /></td>
+  </tr>
+</table>
 
 Repository degli esercizi di laboratorio per il corso di **Metodi Numerici Computazionali (MNC)**.
 
@@ -25,6 +32,9 @@ Questo repository contiene tutto il materiale necessario per seguire e approfond
 ├── anmglib_5.0/            # Libreria completa per geometria computazionale
 └── Libreria/               # Utilities e funzioni personalizzate
 ```
+---
+
+> Ho condiviso questi appunti, esercizi e figure gratuitamente. La loro realizzazione ha richiesto numerose ore di studio e lavoro; se li trovassi utili, ti invito a lasciare una stella (⭐) alla repository come forma di supporto e riconoscimento.
 
 ---
 
