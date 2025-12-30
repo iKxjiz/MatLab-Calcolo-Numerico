@@ -1,9 +1,7 @@
 # Raccolta di figure – SMDPP / Bézier
 
-Ho condiviso questi appunti e queste figure gratuitamente.
-La loro realizzazione ha richiesto diverse ore di lavoro; se li trovassi utili, ti chiederei di lasciare una ⭐ alla repository come supporto e riconoscimento.
-
 Le immagini sono generate tramite gli script presenti nel repository e raccolte nella cartella `Immagini/`.
+NomeImmagine.png --> NomeImmagine.m 
 
 ---
 
