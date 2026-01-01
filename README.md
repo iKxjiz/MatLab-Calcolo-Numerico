@@ -17,10 +17,9 @@ Questo repository contiene tutto il materiale necessario per seguire e approfond
 
 ```
 ├── Extra/                  # Materiale aggiuntivo e simulazioni pre-appello
-├── Figure/                 # Galleria di figure artistiche con curve di Bézier
+├── Figure/                 # Galleria di figure artistiche con curve di Bézier (Disegno Vettoriale) 
 ├── Laboratori/             # Raccolta laboratori  
-├── Libreria/               # Utilities e funzioni personalizzate
-|     └──> anmglib_5.0/     # Libreria completa per geometria computazionale
+├── Libreria/               # Libreria completa per geometria computazionale
 └── Materiale-Didattico/    # Dispense, guide PDF, appunti delle lezioni
 ```
 ---
