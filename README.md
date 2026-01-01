@@ -16,7 +16,7 @@ Questo repository contiene tutto il materiale necessario per seguire e approfond
 ## Struttura del Repository
 
 ```
-├── Laboratorio/            # Raccolta laboratori  
+├── Laboratori/             # Raccolta laboratori  
 ├── Figure/                 # Galleria di figure artistiche con curve di Bézier
 ├── Extra/                  # Materiale aggiuntivo e simulazioni pre-appello
 ├── Materiale-Didattico/    # Dispense, guide PDF, appunti delle lezioni
